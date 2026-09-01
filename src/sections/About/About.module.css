@@ -46,54 +46,88 @@
   gap: var(--space-8) var(--space-8);
 }
 
-/* ---------- portrait ---------- */
+/* ---------- visual: photo + floating glass chips ---------- */
 
-.portrait {
-  grid-column: span 4;
+.visual {
+  grid-column: span 5;
   position: relative;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
 }
 
-.portrait img {
+.photo {
+  width: 74%;
+  aspect-ratio: 1;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: var(--glass-shadow);
+}
+
+.photo img {
   display: block;
   width: 100%;
-  height: 360px;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-lg);
 }
 
-.badge {
+.chip {
   position: absolute;
-  top: var(--space-4);
-  left: var(--space-4);
-  padding: 7px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 150px;
+  padding: 9px 14px;
   border-radius: var(--radius-pill);
   background: var(--glass-fill);
   backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
-  color: var(--color-ink);
-  font-size: 0.65rem;
+  box-shadow: var(--glass-shadow);
+  font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.portrait figcaption {
-  padding-top: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.portrait figcaption b {
-  font-size: 1rem;
-  font-weight: 700;
+  line-height: 1.3;
   color: var(--color-ink);
+  animation: chipFloat 6s ease-in-out infinite;
 }
 
-.portrait figcaption span {
-  font-size: 0.8rem;
-  color: var(--color-ink-muted);
+.chip b {
+  color: var(--color-copper);
+  font-weight: 700;
+}
+
+.chip1 {
+  top: 4%;
+  left: -6%;
+  animation-delay: 0s;
+}
+
+.chip2 {
+  top: 10%;
+  right: -8%;
+  animation-delay: 1.4s;
+}
+
+.chip3 {
+  bottom: 16%;
+  left: -10%;
+  animation-delay: 2.8s;
+}
+
+.chip4 {
+  bottom: 2%;
+  right: -4%;
+  animation-delay: 4.2s;
+}
+
+@keyframes chipFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 /* ---------- word block ---------- */
@@ -134,6 +168,40 @@
 
 .word .muted {
   margin-bottom: 0;
+  color: var(--color-ink-muted);
+}
+
+.byline {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgb(17 18 20 / 12%);
+}
+
+.byline img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.byline div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.byline b {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.byline span {
+  font-size: 0.78rem;
   color: var(--color-ink-muted);
 }
 
@@ -183,14 +251,18 @@
 }
 
 @media (max-width: 900px) {
-  .portrait,
+  .visual,
   .word,
   .card {
     grid-column: span 12;
   }
 
-  .portrait img {
-    height: 260px;
+  .visual {
+    min-height: 320px;
+  }
+
+  .photo {
+    width: 62%;
   }
 }
 
@@ -198,5 +270,35 @@
   .about {
     width: 100%;
     padding: var(--space-6) var(--space-5);
+  }
+
+  .visual {
+    min-height: 280px;
+  }
+
+  .photo {
+    width: 56%;
+  }
+
+  .chip {
+    max-width: 120px;
+    padding: 7px 11px;
+    font-size: 0.65rem;
+  }
+
+  .chip1 {
+    left: 0;
+  }
+
+  .chip2 {
+    right: 0;
+  }
+
+  .chip3 {
+    left: 2%;
+  }
+
+  .chip4 {
+    right: 2%;
   }
 }
