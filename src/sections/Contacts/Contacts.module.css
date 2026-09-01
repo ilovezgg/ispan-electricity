@@ -1,7 +1,7 @@
 .contacts {
-  background: #0d0e10;
-  padding: var(--space-8);
-  max-width: 1080px;
+  background: var(--color-surface);
+  padding: var(--space-8) 0;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -9,7 +9,7 @@
 
 .header {
   max-width: 56ch;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
 .eyebrow {
@@ -19,7 +19,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-copper-bright);
+  color: var(--color-copper);
 }
 
 .heading {
@@ -28,14 +28,14 @@
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.02em;
-  color: #f5f4f2;
+  color: var(--color-ink);
 }
 
 .subtitle {
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.55;
-  color: rgb(245 244 242 / 62%);
+  color: var(--color-ink-muted);
 }
 
 /* ---------- grid ---------- */
@@ -43,8 +43,8 @@
 .grid {
   display: grid;
   grid-template-columns: 7fr 5fr;
-  gap: var(--space-4);
-  align-items: stretch;
+  gap: var(--space-8);
+  align-items: start;
 }
 
 /* ---------- channels ---------- */
@@ -52,10 +52,10 @@
 .channels {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
   list-style: none;
   margin: 0;
   padding: 0;
+  border-top: 1px solid rgb(17 18 20 / 12%);
 }
 
 .channel {
@@ -63,23 +63,20 @@
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
   column-gap: var(--space-4);
-  padding: var(--space-5);
-  border-radius: var(--radius-lg);
-  background: rgb(255 255 255 / 5%);
-  border: 1px solid rgb(255 255 255 / 8%);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid rgb(17 18 20 / 12%);
   text-decoration: none;
-  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+  transition: padding-left 200ms ease, border-color 200ms ease;
 }
 
 .channel:hover {
-  background: rgb(184 115 51 / 14%);
-  border-color: rgb(224 153 94 / 40%);
-  transform: translateY(-2px);
+  padding-left: var(--space-3);
+  border-color: var(--color-copper);
 }
 
 .channel:hover .arrow {
-  background: var(--color-copper-bright);
-  color: #16130f;
+  background: var(--color-copper);
+  color: #fff;
 }
 
 .channelLabel {
@@ -87,7 +84,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgb(245 244 242 / 55%);
+  color: var(--color-ink-muted);
 }
 
 .channelValue {
@@ -95,13 +92,13 @@
   grid-column: 2;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #f5f4f2;
+  color: var(--color-ink);
 }
 
 .channelNote {
   grid-column: 1;
   font-size: 0.8rem;
-  color: rgb(245 244 242 / 55%);
+  color: var(--color-ink-muted);
 }
 
 .arrow {
@@ -110,23 +107,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: rgb(255 255 255 / 10%);
-  color: #f5f4f2;
-  font-size: 0.95rem;
-  transition: background 200ms ease, color 200ms ease;
+  border: 1px solid rgb(17 18 20 / 16%);
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
 }
 
 /* ---------- place ---------- */
 
 .place {
-  padding: var(--space-6);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(155deg, rgb(184 115 51 / 22%), rgb(255 255 255 / 4%));
-  border: 1px solid rgb(224 153 94 / 25%);
-  color: #f5f4f2;
+  padding-top: var(--space-3);
   display: flex;
   flex-direction: column;
 }
@@ -138,7 +131,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-copper-bright);
+  color: var(--color-copper);
 }
 
 .placeArea {
@@ -146,13 +139,14 @@
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -0.01em;
+  color: var(--color-ink);
 }
 
 .placeNote {
   margin: 0 0 var(--space-5);
-  font-size: 0.85rem;
-  line-height: 1.55;
-  color: rgb(245 244 242 / 65%);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-ink-muted);
 }
 
 .placeHours {
@@ -160,23 +154,23 @@
   align-items: baseline;
   justify-content: space-between;
   padding: var(--space-4) 0;
-  border-top: 1px solid rgb(255 255 255 / 14%);
+  border-top: 1px solid rgb(17 18 20 / 12%);
   font-size: 0.85rem;
+  color: var(--color-ink);
 }
 
 .placeHours span {
-  color: rgb(245 244 242 / 55%);
+  color: var(--color-ink-muted);
 }
 
 .placeMap {
-  margin-top: auto;
   padding-top: var(--space-4);
-  border-top: 1px solid rgb(255 255 255 / 14%);
+  border-top: 1px solid rgb(17 18 20 / 12%);
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-size: 0.8rem;
-  color: rgb(245 244 242 / 65%);
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
 }
 
 .placeMapLabel {
@@ -184,19 +178,27 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-copper-bright);
+  color: var(--color-copper);
 }
 
 /* ---------- responsive ---------- */
 
+@media (max-width: 1400px) {
+  .contacts {
+    width: 90%;
+  }
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
 }
 
 @media (max-width: 720px) {
   .contacts {
+    width: 100%;
     padding: var(--space-6) var(--space-5);
   }
 
@@ -218,9 +220,5 @@
   .arrow {
     grid-row: 1;
     grid-column: 2;
-  }
-
-  .place {
-    padding: var(--space-5);
   }
 }
