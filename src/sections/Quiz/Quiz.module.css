@@ -2,15 +2,14 @@
   background: var(--color-surface);
   padding: 0 0 var(--space-8);
   width: 80%;
-  max-width: 860px;
   margin: 0 auto;
 }
 
 /* ---------- header ---------- */
 
 .header {
-  padding-bottom: var(--space-5);
-  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
   border-bottom: 1px solid rgb(17 18 20 / 12%);
 }
 
@@ -103,7 +102,7 @@
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-4);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-8);
 }
 
 .question h3 {
@@ -136,7 +135,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  padding: var(--space-4) 0;
+  padding: var(--space-5) 0;
   border: none;
   border-bottom: 1px solid rgb(17 18 20 / 12%);
   background: transparent;
@@ -265,7 +264,7 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  margin-top: var(--space-6);
+  margin-top: var(--space-8);
   flex-wrap: wrap;
 }
 

@@ -9,7 +9,7 @@
 
 .header {
   max-width: 56ch;
-  margin-bottom: var(--space-8);
+  margin-bottom: calc(var(--space-8) * 1.5);
 }
 
 .eyebrow {
@@ -43,7 +43,7 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-6) var(--space-6);
+  gap: var(--space-8) var(--space-8);
 }
 
 /* ---------- portrait ---------- */
@@ -141,7 +141,7 @@
 
 .card {
   grid-column: span 3;
-  padding-top: var(--space-5);
+  padding-top: var(--space-6);
   border-top: 1px solid rgb(17 18 20 / 12%);
   transition: border-color 200ms ease;
 }
