@@ -1,0 +1,36 @@
+.switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--glass-fill);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--glass-shadow);
+}
+
+.option,
+.active {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  color: var(--color-ink-muted);
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.option:hover {
+  color: var(--color-ink);
+}
+
+.active {
+  background: var(--color-ink);
+  color: var(--color-surface);
+}

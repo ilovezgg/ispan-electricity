@@ -1,0 +1,39 @@
+/*
+ * Styling choice: CSS Modules, not Tailwind.
+ * This hero leans on bespoke SVG geometry, keyframe choreography and glass
+ * surfaces with many interdependent custom properties (sway/pulse/parallax
+ * timings) — that reads clearer as named, co-located .module.css files than
+ * as long utility-class strings, and CSS Modules add zero extra dependencies
+ * or build config on top of Vite's built-in support.
+ */
+
+:root {
+  /* Palette — warm, light, premium-editorial */
+  --color-surface: #f2f1ef;
+  --color-surface-alt: #eaeae8;
+  --color-ink: #111214;
+  --color-ink-muted: #55565a;
+
+  --color-copper: #b87333;
+  --color-copper-bright: #e0995e;
+
+  /* Glass, used only where a panel sits over the cable illustration */
+  --glass-fill: rgb(255 255 255 / 42%);
+  --glass-border: rgb(255 255 255 / 55%);
+  --glass-blur: 16px;
+  --glass-shadow: 0 8px 30px rgb(17 18 20 / 8%);
+
+  /* Spacing scale */
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3.5rem;
+
+  /* Radii */
+  --radius-pill: 999px;
+  --radius-lg: 20px;
+
+  --font-sans:
+    "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
