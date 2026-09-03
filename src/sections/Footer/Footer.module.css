@@ -1,0 +1,232 @@
+.footer {
+  padding: var(--space-6) var(--space-8) var(--space-8);
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: var(--color-footer-bg);
+  padding: calc(var(--space-8) * 1.1) var(--space-8) var(--space-5);
+}
+
+/* ---------- main content ---------- */
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 42ch;
+}
+
+.logo {
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #fff;
+  text-transform: lowercase;
+}
+
+.cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-footer-text-muted);
+}
+
+.cities li:not(:last-child)::after {
+  content: "·";
+  margin-left: 10px;
+  color: var(--color-footer-text-muted);
+}
+
+.tagline {
+  margin: var(--space-3) 0 0;
+  max-width: 36ch;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-footer-text-muted);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.phoneLabel {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-footer-text-muted);
+}
+
+.phone {
+  display: block;
+  margin: 6px 0 var(--space-5);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.phone:hover {
+  color: var(--color-copper-bright);
+}
+
+.buttons {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.whatsapp,
+.call {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.whatsapp {
+  background: var(--color-accent-yellow);
+  color: #171400;
+}
+
+.whatsapp svg {
+  width: 16px;
+  height: 16px;
+}
+
+.call {
+  background: rgb(255 255 255 / 10%);
+  color: #fff;
+}
+
+.whatsapp:hover,
+.call:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--color-footer-text-muted);
+}
+
+.details a {
+  color: var(--color-footer-text-muted);
+  text-decoration: none;
+}
+
+.details a:hover {
+  color: #fff;
+}
+
+.addressLabel {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- bottom bar ---------- */
+
+.bottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: calc(var(--space-8) * 1.1);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-footer-line);
+  font-size: 0.78rem;
+  color: var(--color-footer-text-muted);
+}
+
+.legal {
+  display: flex;
+  gap: var(--space-5);
+}
+
+.legal a {
+  color: var(--color-footer-text-muted);
+  text-decoration: none;
+}
+
+.legal a:hover {
+  color: #fff;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .right {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: var(--space-5) var(--space-5) var(--space-6);
+  }
+
+  .panel {
+    padding: var(--space-6) var(--space-5) var(--space-5);
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .whatsapp,
+  .call {
+    justify-content: center;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

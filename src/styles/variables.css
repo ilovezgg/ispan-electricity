@@ -17,6 +17,9 @@
   --color-copper: #b87333;
   --color-copper-bright: #e0995e;
 
+  /* Status dot — "online" indicator, the one place green appears */
+  --color-status-online: #2f9e5c;
+
   /* Glass, used only where a panel sits over the cable illustration */
   --glass-fill: rgb(255 255 255 / 42%);
   --glass-border: rgb(255 255 255 / 55%);
@@ -33,6 +36,23 @@
   /* Radii */
   --radius-pill: 999px;
   --radius-lg: 20px;
+  --radius-xl: 28px;
+
+  /* Pastel accents — quiz option cards */
+  --pastel-beige: #ece3d4;
+  --pastel-sage: #dbe5dc;
+  --pastel-lavender: #e3dff1;
+  --pastel-sand: #efe0c6;
+
+  /* Footer — the one dark surface on the site */
+  --color-footer-bg: #111111;
+  --color-footer-line: rgb(255 255 255 / 8%);
+  --color-footer-text-muted: #9a9a9a;
+  --color-accent-yellow: #f3c94b;
+
+  /* Elevation for freely-floating cards */
+  --shadow-float: 0 18px 40px rgb(17 18 20 / 10%), 0 6px 14px rgb(17 18 20 / 6%);
+  --shadow-float-hover: 0 26px 55px rgb(17 18 20 / 14%), 0 10px 20px rgb(17 18 20 / 8%);
 
   --font-sans:
     "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;

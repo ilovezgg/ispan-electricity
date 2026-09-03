@@ -1,15 +1,19 @@
 .about {
   background: var(--color-surface);
-  padding: var(--space-8) 0;
-  width: 80%;
-  margin: 0 auto;
+  padding: var(--space-8) var(--space-8);
 }
 
-/* ---------- header ---------- */
+/* ---------- top: intro + visual, side by side ---------- */
 
-.header {
-  max-width: 56ch;
-  margin-bottom: calc(var(--space-8) * 1.5);
+.top {
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.intro {
+  max-width: 46ch;
 }
 
 .eyebrow {
@@ -38,31 +42,26 @@
   color: var(--color-ink-muted);
 }
 
-/* ---------- grid ---------- */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--space-8) var(--space-8);
-}
-
 /* ---------- visual: photo + floating glass chips ---------- */
 
 .visual {
-  grid-column: span 5;
-  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 380px;
+}
+
+.photoWrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
 }
 
 .photo {
-  width: 74%;
-  aspect-ratio: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   border-radius: 28px;
   overflow: hidden;
   box-shadow: var(--glass-shadow);
+  transform: rotate(-1.5deg);
 }
 
 .photo img {
@@ -77,7 +76,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  max-width: 150px;
+  max-width: 132px;
   padding: 9px 14px;
   border-radius: var(--radius-pill);
   background: var(--glass-fill);
@@ -88,53 +87,40 @@
   font-weight: 600;
   line-height: 1.3;
   color: var(--color-ink);
+  opacity: 0;
+  transform: rotate(var(--chip-rotate)) translateY(14px) scale(0.92);
+  transition: opacity 500ms cubic-bezier(0.16, 1, 0.3, 1), transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.chipVisible {
+  opacity: 1;
+  transform: rotate(var(--chip-rotate)) translateY(0) scale(1);
   animation: chipFloat 6s ease-in-out infinite;
+  animation-delay: inherit;
 }
 
 .chip b {
   color: var(--color-copper);
   font-weight: 700;
-}
-
-.chip1 {
-  top: 4%;
-  left: -6%;
-  animation-delay: 0s;
-}
-
-.chip2 {
-  top: 10%;
-  right: -8%;
-  animation-delay: 1.4s;
-}
-
-.chip3 {
-  bottom: 16%;
-  left: -10%;
-  animation-delay: 2.8s;
-}
-
-.chip4 {
-  bottom: 2%;
-  right: -4%;
-  animation-delay: 4.2s;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 @keyframes chipFloat {
   0%,
   100% {
-    transform: translateY(0);
+    transform: rotate(var(--chip-rotate)) translateY(0) scale(1);
   }
   50% {
-    transform: translateY(-6px);
+    transform: rotate(var(--chip-rotate)) translateY(-6px) scale(1);
   }
 }
 
-/* ---------- word block ---------- */
+/* ---------- quote block, full width ---------- */
 
-.word {
-  grid-column: span 8;
-  padding-top: var(--space-3);
+.quoteBlock {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid rgb(17 18 20 / 12%);
 }
 
 .kicker {
@@ -148,26 +134,24 @@
 }
 
 .quote {
-  margin: 0 0 var(--space-5);
+  max-width: 62ch;
+  margin: 0 0 var(--space-4);
   padding: 0 0 0 var(--space-5);
   border: none;
-  border-left: 1px solid rgb(17 18 20 / 16%);
-  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  border-left: 2px solid var(--color-copper);
+  font-size: clamp(1.15rem, 2.1vw, 1.5rem);
   font-weight: 600;
-  line-height: 1.45;
+  line-height: 1.55;
   letter-spacing: -0.01em;
   color: var(--color-ink);
 }
 
-.word p {
-  margin: 0 0 var(--space-4);
+.paragraph {
+  max-width: 62ch;
+  margin: 0 0 var(--space-5);
+  padding-left: var(--space-5);
   font-size: 0.95rem;
   line-height: 1.7;
-  color: var(--color-ink);
-}
-
-.word .muted {
-  margin-bottom: 0;
   color: var(--color-ink-muted);
 }
 
@@ -175,9 +159,8 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  margin-top: var(--space-6);
-  padding-top: var(--space-5);
-  border-top: 1px solid rgb(17 18 20 / 12%);
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-6);
 }
 
 .byline img {
@@ -205,100 +188,113 @@
   color: var(--color-ink-muted);
 }
 
-/* ---------- pillar cards ---------- */
+/* ---------- facts row ---------- */
 
-.card {
-  grid-column: span 3;
-  padding-top: var(--space-6);
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  padding-top: var(--space-5);
   border-top: 1px solid rgb(17 18 20 / 12%);
-  transition: border-color 200ms ease;
 }
 
-.card:hover {
-  border-color: var(--color-copper);
+.fact {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
 }
 
-.cardIndex {
-  display: block;
-  margin-bottom: var(--space-4);
-  font-size: 0.8rem;
+.factIndex {
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   color: var(--color-copper);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
-.card h3 {
-  margin: 0 0 var(--space-3);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: var(--color-ink);
-}
-
-.card p {
-  margin: 0;
+.factLabel {
   font-size: 0.85rem;
-  line-height: 1.6;
-  color: var(--color-ink-muted);
+  font-weight: 600;
+  color: var(--color-ink);
 }
 
 /* ---------- responsive ---------- */
 
-@media (max-width: 1400px) {
+@media (max-width: 1100px) {
   .about {
-    width: 90%;
+    padding: var(--space-8) var(--space-6);
   }
 }
 
 @media (max-width: 900px) {
-  .visual,
-  .word,
-  .card {
-    grid-column: span 12;
+  .top {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
   }
 
-  .visual {
-    min-height: 320px;
+  .intro {
+    max-width: none;
   }
 
-  .photo {
-    width: 62%;
+  .photoWrap {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .quote,
+  .paragraph,
+  .byline {
+    max-width: none;
   }
 }
 
 @media (max-width: 720px) {
   .about {
-    width: 100%;
     padding: var(--space-6) var(--space-5);
   }
 
-  .visual {
-    min-height: 280px;
+  .quoteBlock {
+    margin-top: var(--space-6);
+    padding-top: var(--space-5);
   }
 
-  .photo {
-    width: 56%;
+  .photoWrap {
+    max-width: 280px;
   }
 
+  .chip,
+  .chipVisible {
+    position: static;
+    display: flex;
+    max-width: none;
+    width: 100%;
+    margin-top: var(--space-3);
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .chip:first-of-type {
+    margin-top: var(--space-5);
+  }
+
+  .quote,
+  .paragraph,
+  .byline {
+    padding-left: var(--space-4);
+  }
+
+  .facts {
+    gap: var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
   .chip {
-    max-width: 120px;
-    padding: 7px 11px;
-    font-size: 0.65rem;
+    transition: none;
   }
 
-  .chip1 {
-    left: 0;
-  }
-
-  .chip2 {
-    right: 0;
-  }
-
-  .chip3 {
-    left: 2%;
-  }
-
-  .chip4 {
-    right: 2%;
+  .chipVisible {
+    animation: none;
   }
 }

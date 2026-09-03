@@ -1,0 +1,12 @@
+.cables {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cables path {
+  fill: none;
+  stroke: rgb(255 255 255 / 6%);
+  stroke-width: 2;
+}

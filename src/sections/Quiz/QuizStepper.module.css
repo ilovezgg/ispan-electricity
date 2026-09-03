@@ -1,0 +1,56 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: background 250ms ease, color 250ms ease;
+}
+
+.circle svg {
+  width: 13px;
+  height: 13px;
+}
+
+.future .circle {
+  background: var(--color-surface-alt);
+  color: var(--color-ink-muted);
+}
+
+.active .circle {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.done .circle {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.line {
+  width: clamp(16px, 3vw, 32px);
+  height: 1.5px;
+  margin: 0 6px;
+  background: rgb(17 18 20 / 14%);
+}
+
+.done .line {
+  background: rgb(17 18 20 / 30%);
+}
