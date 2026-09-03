@@ -26,6 +26,7 @@ export function About() {
 
             {pillars.map((pillar, i) => {
               const pos = CHIP_POSITIONS[i];
+              if (!pos) return null;
               const style: CSSProperties = {
                 top: pos.top,
                 bottom: pos.bottom,

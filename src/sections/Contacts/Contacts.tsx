@@ -208,7 +208,7 @@ export function Contacts() {
                   <button type="submit" className={styles.submit} disabled={!canSubmit}>
                     {status === "sending" ? (
                       <>
-                        <ContactIcon name="spinner" className={styles.spinner} />
+                        <ContactIcon name="spinner" className={styles.spinner!} />
                         {form.submitting}
                       </>
                     ) : (
