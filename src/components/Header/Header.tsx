@@ -21,7 +21,7 @@ export function Header() {
 
       <div className={styles.actions}>
         <LangSwitcher />
-        <a className={styles.cta} href="#contacto" data-circuit-target="cta">
+        <a className={styles.cta} href="#contacto">
           {t.header.cta}
         </a>
       </div>
