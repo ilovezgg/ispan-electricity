@@ -1,76 +1,68 @@
-import type { CSSProperties } from "react";
-import { useScrollReveal } from "../../hooks/useScrollReveal";
 import { useTranslation } from "../../i18n/useTranslation";
-import { CHIP_POSITIONS } from "./chipConfig";
 import styles from "./About.module.css";
 
 export function About() {
   const { t } = useTranslation();
-  const { eyebrow, heading, subtitle, founder, quoteKicker, quote, paragraph, pillars } = t.about;
-  const { ref, visible } = useScrollReveal<HTMLDivElement>();
+  const { eyebrow, heading, headingAccent, intro, founder, principle, timeline, cta, ctaNote } = t.about;
 
   return (
     <section className={styles.about} aria-label={heading}>
-      <div className={styles.top}>
-        <div className={styles.intro}>
-          <span className={styles.eyebrow}>{eyebrow}</span>
-          <h2 className={styles.heading}>{heading}</h2>
-          <p className={styles.subtitle}>{subtitle}</p>
-        </div>
-
-        <div ref={ref} className={styles.visual}>
-          <div className={styles.photoWrap}>
+      <div className={styles.card}>
+        <div className={styles.top}>
+          <div className={styles.visual}>
             <div className={styles.photo}>
-              <img src="/images/features/smart-home.jpg" alt="" />
+              <img src="/images/about/founder.png" alt={founder.badgeName} />
             </div>
 
-            {pillars.map((pillar, i) => {
-              const pos = CHIP_POSITIONS[i];
-              if (!pos) return null;
-              const style: CSSProperties = {
-                top: pos.top,
-                bottom: pos.bottom,
-                left: pos.left,
-                right: pos.right,
-                "--chip-rotate": pos.rotate,
-                transitionDelay: visible ? `${pos.delayMs}ms` : "0ms",
-              } as CSSProperties;
-
-              return (
-                <span
-                  key={pillar.title}
-                  className={visible ? `${styles.chip} ${styles.chipVisible}` : styles.chip}
-                  style={style}
-                >
-                  <b>{String(i + 1).padStart(2, "0")}</b>
-                  {pillar.title}
-                </span>
-              );
-            })}
+            <div className={styles.founderCard}>
+              <span className={styles.founderBadge}>{founder.badgeName}</span>
+              <span className={styles.founderRole}>{founder.role}</span>
+              <span className={styles.founderLocation}>{founder.location}</span>
+              <div className={styles.founderTags}>
+                {founder.badges.map((badge) => (
+                  <span key={badge} className={styles.founderTag}>
+                    {badge}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div className={styles.quoteBlock}>
-        <span className={styles.kicker}>{quoteKicker}</span>
-        <blockquote className={styles.quote}>{quote}</blockquote>
-        <p className={styles.paragraph}>{paragraph}</p>
+          <div className={styles.content}>
+            <span className={styles.eyebrow}>{eyebrow}</span>
+            <h2 className={styles.heading}>
+              {heading}
+              <br />
+              <em>{headingAccent}</em>
+            </h2>
 
-        <div className={styles.byline}>
-          <img src="/images/about/founder.png" alt={founder.name} />
-          <div>
-            <b>{founder.name}</b>
-            <span>{founder.role}</span>
+            <div className={styles.introRow}>
+              <p className={styles.intro}>{intro}</p>
+
+              <div className={styles.principle}>
+                <span className={styles.principleKicker}>{principle.kicker}</span>
+                <blockquote className={styles.principleQuote}>{principle.quote}</blockquote>
+                <span className={styles.principleByline}>— {founder.initials}</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className={styles.facts}>
-          {pillars.map((pillar, i) => (
-            <div className={styles.fact} key={pillar.title}>
-              <span className={styles.factIndex}>{String(i + 1).padStart(2, "0")}</span>
-              <span className={styles.factLabel}>{pillar.title}</span>
+        <div className={styles.timeline}>
+          {timeline.map((item) => (
+            <div className={styles.timelineItem} key={item.year}>
+              <span className={styles.timelineYear}>{item.year}</span>
+              <b className={styles.timelineTitle}>{item.title}</b>
+              <span className={styles.timelineDescription}>{item.description}</span>
             </div>
           ))}
+        </div>
+
+        <div className={styles.ctaRow}>
+          <a href="#contacto" className={styles.ctaButton}>
+            {cta} <span aria-hidden="true">→</span>
+          </a>
+          <span className={styles.ctaNote}>{ctaNote}</span>
         </div>
       </div>
     </section>

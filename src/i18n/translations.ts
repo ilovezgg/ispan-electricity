@@ -4,7 +4,7 @@ export const translations: Translations = {
   es: {
     meta: { htmlLang: "es" },
     header: {
-      logo: "voltia",
+      logo: "smart volt",
       nav: ["servicios", "proyectos", "contacto"],
       cta: "pedir presupuesto",
     },
@@ -109,25 +109,30 @@ export const translations: Translations = {
       pick: "elegir",
     },
     about: {
-      eyebrow: "quién hay detrás",
-      heading: "Un técnico, no una centralita.",
-      subtitle:
-        "Marbella, España. Aquí se coge el teléfono, se pasa presupuesto y se abre el cuadro — la misma persona, de principio a fin.",
+      eyebrow: "historia",
+      heading: "Electricidad",
+      headingAccent: "que no falla.",
+      intro:
+        "Empecé como ayudante de electricista. Hace 12 años entendí algo simple: la gente no necesita un «electricista de una hora», sino alguien que responda por el resultado durante años. Me trasladé a España en 2018, obtuve la licencia local y aprendí la normativa REBT. Desde entonces trabajo solo, sin cuadrillas.",
       founder: {
-        name: "Javier Molina",
-        role: "electricista autorizado, Marbella",
+        initials: "BB",
+        badgeName: "BB · SMART VOLT",
+        role: "Electricista autónomo",
+        location: "Marbella y alrededores",
+        badges: ["Licencia ES", "12 años"],
       },
-      quoteKicker: "en primera persona",
-      quote:
-        "No dejo una instalación que no pondría en mi propia casa. Por eso reviso cada cuadro yo mismo antes de cerrarlo.",
-      paragraph:
-        "Hago instalaciones nuevas, domótica, cuadros y averías para viviendas, locales y comunidades en Marbella y alrededores. Cada aviso lo atiendo yo, sin subcontratas ni intermediarios entre tú y el trabajo.",
-      pillars: [
-        { title: "Un solo técnico" },
-        { title: "Todo con boletín" },
-        { title: "Presupuesto cerrado" },
-        { title: "Cobertura en Marbella" },
+      principle: {
+        kicker: "principio",
+        quote:
+          "«Hago en casa del cliente lo mismo que haría en la mía. Si tengo dudas, lo rehago. Sale más barato hacerlo bien a la primera que dos veces.»",
+      },
+      timeline: [
+        { year: "2012", title: "Inicio en el oficio", description: "Primeros cuadros, primeras obras" },
+        { year: "2018", title: "Traslado a España", description: "Licencia, REBT, boletín" },
+        { year: "2026", title: "600+ proyectos", description: "Pisos, casas, locales" },
       ],
+      cta: "Conóceme",
+      ctaNote: "Respondo yo mismo, sin gestores",
     },
     contacts: {
       eyebrow: "contacto directo",
@@ -170,7 +175,7 @@ export const translations: Translations = {
       whatsappCta: "WhatsApp",
       addressLabel: "zona de trabajo",
       address: "Marbella, España",
-      copyright: "© 2026 Voltia",
+      copyright: "© 2026 Smart Volt",
       nif: "NIF 12345678A",
       privacyLink: "política de privacidad",
       legalLink: "aviso legal",
@@ -179,7 +184,7 @@ export const translations: Translations = {
   en: {
     meta: { htmlLang: "en" },
     header: {
-      logo: "voltia",
+      logo: "smart volt",
       nav: ["services", "projects", "contact"],
       cta: "get a quote",
     },
@@ -283,25 +288,30 @@ export const translations: Translations = {
       pick: "select",
     },
     about: {
-      eyebrow: "who's behind it",
-      heading: "One technician, not a call center.",
-      subtitle:
-        "Marbella, Spain. The person who picks up the phone, quotes the job and opens the panel is the same one, start to finish.",
+      eyebrow: "story",
+      heading: "Electrical work",
+      headingAccent: "that doesn't let you down.",
+      intro:
+        "I started as an electrician's assistant. 12 years ago I realized something simple: people don't need an \"electrician for an hour\" — they need someone who stands behind the result for years. I moved to Spain in 2018, got my local license, and learned the REBT code. Since then — solo, no crews.",
       founder: {
-        name: "Javier Molina",
-        role: "licensed electrician, Marbella",
+        initials: "BB",
+        badgeName: "BB · SMART VOLT",
+        role: "Independent electrician",
+        location: "Marbella and surrounding areas",
+        badges: ["ES license", "12 years"],
       },
-      quoteKicker: "in his own words",
-      quote:
-        "I won't leave an installation I wouldn't put in my own home. That's why I check every panel myself before closing the job.",
-      paragraph:
-        "I handle new wiring, smart-home automation, panels and repairs for homes, businesses and communities in Marbella and surrounding areas. Every call-out is mine to handle — no subcontractors between you and the work.",
-      pillars: [
-        { title: "One technician" },
-        { title: "Always certified" },
-        { title: "Fixed quote" },
-        { title: "Marbella coverage" },
+      principle: {
+        kicker: "principle",
+        quote:
+          "\"I do the job the way I'd want it done in my own home. If I'm unsure, I redo it. Doing it right the first time is cheaper than doing it twice.\"",
+      },
+      timeline: [
+        { year: "2012", title: "Started in the trade", description: "First panels, first jobs" },
+        { year: "2018", title: "Moved to Spain", description: "License, REBT, boletín" },
+        { year: "2026", title: "600+ projects", description: "Apartments, houses, commercial" },
       ],
+      cta: "Get in touch",
+      ctaNote: "I answer personally, no account managers",
     },
     contacts: {
       eyebrow: "direct contact",
@@ -344,7 +354,7 @@ export const translations: Translations = {
       whatsappCta: "WhatsApp",
       addressLabel: "service area",
       address: "Marbella, Spain",
-      copyright: "© 2026 Voltia",
+      copyright: "© 2026 Smart Volt",
       nif: "Tax ID 12345678A",
       privacyLink: "privacy policy",
       legalLink: "legal notice",
@@ -353,7 +363,7 @@ export const translations: Translations = {
   ru: {
     meta: { htmlLang: "ru" },
     header: {
-      logo: "voltia",
+      logo: "смарт вольт",
       nav: ["услуги", "проекты", "контакты"],
       cta: "рассчитать смету",
     },
@@ -457,25 +467,30 @@ export const translations: Translations = {
       pick: "выбрать",
     },
     about: {
-      eyebrow: "кто за этим стоит",
-      heading: "Один мастер, а не колл-центр.",
-      subtitle:
-        "Марбелья, Испания. Трубку берёт, смету считает и щит открывает один и тот же человек — от начала до конца.",
+      eyebrow: "история",
+      heading: "Электрика",
+      headingAccent: "которая не подводит.",
+      intro:
+        "Я начинал как помощник монтёра. 12 лет назад понял простую вещь: людям нужен не «электрик на час», а человек, который отвечает за результат годами. Переехал в Испанию в 2018, получил местную лицензию, выучил нормы REBT. С тех пор — один, без бригад.",
       founder: {
-        name: "Хавьер Молина",
-        role: "электрик с лицензией, Марбелья",
+        initials: "ББ",
+        badgeName: "ББ · СМАРТ ВОЛЬТ",
+        role: "Частный электрик",
+        location: "Марбелья и окрестности",
+        badges: ["ES лицензия", "12 лет"],
       },
-      quoteKicker: "от первого лица",
-      quote:
-        "Не оставляю проводку, которую не поставил бы в собственном доме. Поэтому каждый щит проверяю лично, прежде чем закрыть объект.",
-      paragraph:
-        "Занимаюсь новой проводкой, умным домом, щитами и авариями в квартирах, домах и офисах в Марбелье и окрестностях. Каждый вызов веду сам, без субподрядчиков между вами и работой.",
-      pillars: [
-        { title: "Один мастер" },
-        { title: "Всё с документами" },
-        { title: "Смета без сюрпризов" },
-        { title: "Работаю по Марбелье" },
+      principle: {
+        kicker: "принцип",
+        quote:
+          "«Делаю у клиента так, как сделал бы у себя. Если сомневаюсь — переделываю. Дешевле сразу хорошо, чем дважды.»",
+      },
+      timeline: [
+        { year: "2012", title: "Старт в профессии", description: "Первые щиты, первые объекты" },
+        { year: "2018", title: "Переезд в Испанию", description: "Лицензия, REBT, boletín" },
+        { year: "2026", title: "600+ объектов", description: "Квартиры, дома, коммерция" },
       ],
+      cta: "Познакомиться",
+      ctaNote: "Отвечаю лично, без менеджеров",
     },
     contacts: {
       eyebrow: "прямая связь",
@@ -518,7 +533,7 @@ export const translations: Translations = {
       whatsappCta: "WhatsApp",
       addressLabel: "зона работы",
       address: "Марбелья, Испания",
-      copyright: "© 2026 Voltia",
+      copyright: "© 2026 Смарт Вольт",
       nif: "NIF 12345678A",
       privacyLink: "политика конфиденциальности",
       legalLink: "правовая информация",

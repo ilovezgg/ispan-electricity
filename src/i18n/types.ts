@@ -55,15 +55,22 @@ export interface Translation {
   readonly about: {
     readonly eyebrow: string;
     readonly heading: string;
-    readonly subtitle: string;
+    readonly headingAccent: string;
+    readonly intro: string;
     readonly founder: {
-      readonly name: string;
+      readonly initials: string;
+      readonly badgeName: string;
       readonly role: string;
+      readonly location: string;
+      readonly badges: readonly [string, string];
     };
-    readonly quoteKicker: string;
-    readonly quote: string;
-    readonly paragraph: string;
-    readonly pillars: readonly [Pillar, Pillar, Pillar, Pillar];
+    readonly principle: {
+      readonly kicker: string;
+      readonly quote: string;
+    };
+    readonly timeline: readonly [TimelineItem, TimelineItem, TimelineItem];
+    readonly cta: string;
+    readonly ctaNote: string;
   };
   readonly contacts: {
     readonly eyebrow: string;
@@ -152,6 +159,12 @@ export interface QuizStep {
 
 export interface Pillar {
   readonly title: string;
+}
+
+export interface TimelineItem {
+  readonly year: string;
+  readonly title: string;
+  readonly description: string;
 }
 
 export type Translations = Record<Locale, Translation>;

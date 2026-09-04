@@ -10,7 +10,7 @@ export function Hero() {
   const [statA, statB] = t.hero.stats;
 
   return (
-    <section className={styles.hero} aria-label="Voltia — electricista">
+    <section className={styles.hero} aria-label="Smart Volt — electricista">
       <CableBundle />
 
       <div className={styles.foreground}>
