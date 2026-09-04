@@ -30,6 +30,7 @@
 
 .logo {
   display: block;
+  align-self: flex-start;
   height: clamp(64px, 10vw, 96px);
   width: auto;
   filter: invert(1);
