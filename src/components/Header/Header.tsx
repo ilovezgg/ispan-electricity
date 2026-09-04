@@ -7,7 +7,9 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <span className={styles.logo}>{t.header.logo}</span>
+      <a href="#" className={styles.logo} aria-label={t.header.logo}>
+        <img src="/images/logo.png" alt="" />
+      </a>
 
       <nav className={styles.nav} aria-label="Main">
         {t.header.nav.map((item) => (

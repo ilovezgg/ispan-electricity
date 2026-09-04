@@ -20,7 +20,7 @@ export function Footer() {
 
         <div className={styles.content}>
           <div className={styles.left}>
-            <span className={styles.logo}>{logo}</span>
+            <img className={styles.logo} src="/images/logo.png" alt={logo} />
 
             <ul className={styles.cities}>
               {cities.map((city) => (
