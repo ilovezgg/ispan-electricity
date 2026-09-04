@@ -1,11 +1,10 @@
 .contacts {
   background: var(--color-surface-alt);
-  padding: var(--space-8) var(--space-8);
+  padding-block: var(--space-8);
 }
 
 .inner {
-  width: 80%;
-  margin: 0 auto;
+  composes: container from global;
   display: grid;
   grid-template-columns: 45fr 55fr;
   gap: var(--space-8);
@@ -412,12 +411,6 @@
 
 /* ---------- responsive ---------- */
 
-@media (max-width: 1100px) {
-  .inner {
-    width: 90%;
-  }
-}
-
 @media (max-width: 900px) {
   .inner {
     grid-template-columns: 1fr;
@@ -428,9 +421,9 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 640px) {
   .contacts {
-    padding: var(--space-6) var(--space-5);
+    padding-block: var(--space-6) var(--space-5);
   }
 
   .channelRow {

@@ -1,11 +1,10 @@
 .quiz {
   background: var(--color-surface);
-  padding: var(--space-6) 0 var(--space-8);
+  padding-block: var(--space-6) var(--space-8);
 }
 
 .outer {
-  width: 80%;
-  margin: 0 auto;
+  composes: container from global;
   padding: var(--space-6);
   border-radius: var(--radius-xl);
   background: #fff;
@@ -64,7 +63,7 @@
 
 .opts {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 22vw, 300px), 1fr));
   gap: var(--space-4);
 }
 
@@ -227,33 +226,12 @@
 
 /* ---------- responsive ---------- */
 
-@media (max-width: 1400px) {
+@media (max-width: 640px) {
   .outer {
-    width: 90%;
-  }
-}
-
-@media (max-width: 900px) {
-  .opts {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 720px) {
-  .outer {
-    width: 100%;
     border-radius: var(--radius-lg);
     padding: var(--space-5);
   }
-}
 
-@media (max-width: 520px) {
-  .opts {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
   .nav {
     flex-direction: column-reverse;
     align-items: stretch;

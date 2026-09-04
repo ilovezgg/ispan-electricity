@@ -1,9 +1,11 @@
 .features {
+  composes: container from global;
   position: relative;
   overflow: hidden;
+  overflow-x: clip;
   isolation: isolate;
   background: var(--color-surface);
-  padding: var(--space-8) var(--space-8);
+  padding-block: var(--space-8);
 }
 
 /* ---------- eyebrow pill ---------- */
@@ -38,53 +40,70 @@
 .grid {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-5);
   padding: var(--space-6) 0 var(--space-8);
 }
 
 .item {
-  flex: 1 1 340px;
-  max-width: 380px;
+  justify-self: center;
+  width: 100%;
   opacity: 0;
   transform: translateY(48px);
   transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.grid.visible .item1 {
+.grid.visible .item1,
+.grid.visible .item2,
+.grid.visible .item3 {
   opacity: 1;
-  transform: translateY(0) rotate(-1.5deg);
-  transition-delay: 0ms;
+  transform: translateY(0);
 }
 
 .grid.visible .item2 {
-  opacity: 1;
-  transform: translateY(0) rotate(1deg);
   transition-delay: 140ms;
 }
 
 .grid.visible .item3 {
-  opacity: 1;
-  transform: translateY(0) rotate(2deg);
   transition-delay: 280ms;
 }
 
-.item1 {
-  margin-top: 8px;
-  z-index: 1;
-}
+/* Overlapping, rotated stack is a desktop-only flourish (>=900px). Below
+   that every card sits in normal grid flow, no overlap, no rotation. */
+@media (min-width: 900px) {
+  .item {
+    max-width: 380px;
+  }
 
-.item2 {
-  margin-top: 60px;
-  margin-left: -34px;
-  z-index: 2;
-}
+  .grid.visible .item1 {
+    transform: translateY(0) rotate(-1.5deg);
+  }
 
-.item3 {
-  margin-top: -10px;
-  margin-left: -34px;
-  z-index: 3;
+  .grid.visible .item2 {
+    transform: translateY(0) rotate(1deg);
+  }
+
+  .grid.visible .item3 {
+    transform: translateY(0) rotate(2deg);
+  }
+
+  .item1 {
+    margin-top: 8px;
+    z-index: 1;
+  }
+
+  .item2 {
+    margin-top: 60px;
+    margin-left: -34px;
+    z-index: 2;
+  }
+
+  .item3 {
+    margin-top: -10px;
+    margin-left: -34px;
+    z-index: 3;
+  }
 }
 
 /* ---------- foot line ---------- */
@@ -104,38 +123,9 @@
 
 /* ---------- responsive ---------- */
 
-@media (max-width: 1100px) {
-  .item2,
-  .item3 {
-    margin-left: -20px;
-  }
-}
-
-@media (max-width: 860px) {
-  .grid {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--space-5);
-  }
-
-  .item,
-  .item1,
-  .item2,
-  .item3 {
-    max-width: none;
-    margin: 0;
-  }
-
-  .grid.visible .item1,
-  .grid.visible .item2,
-  .grid.visible .item3 {
-    transform: translateY(0) rotate(0deg);
-  }
-}
-
 @media (max-width: 640px) {
   .features {
-    padding: var(--space-6) var(--space-5) var(--space-5);
+    padding-block: var(--space-6) var(--space-5);
   }
 
   .grid {

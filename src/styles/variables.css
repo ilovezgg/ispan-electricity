@@ -8,6 +8,20 @@
  */
 
 :root {
+  /* ---------------------------------------------------------------------
+   * Layout tokens — the whole site consolidates to exactly three
+   * breakpoints (640 / 900 / 1280px), placed at genuine layout-breakage
+   * points rather than device widths. `--gutter` and `--max-width` back
+   * the single shared `.container` utility in global.css that every
+   * section composes so left edges stay aligned at any viewport width.
+   * --------------------------------------------------------------------- */
+  --bp-sm: 640px;
+  --bp-md: 900px;
+  --bp-lg: 1280px;
+
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --max-width: 1520px;
+
   /* Palette — warm, light, premium-editorial */
   --color-surface: #f2f1ef;
   --color-surface-alt: #eaeae8;

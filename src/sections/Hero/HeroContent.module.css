@@ -41,7 +41,7 @@
 .subtitle {
   margin: 0;
   max-width: 46ch;
-  font-size: 1.02rem;
+  font-size: clamp(0.9rem, 1.6vw, 1.02rem);
   line-height: 1.5;
   color: var(--color-ink-muted);
 }
@@ -70,11 +70,5 @@
   .content,
   .fade {
     animation: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .subtitle {
-    font-size: 0.9rem;
   }
 }

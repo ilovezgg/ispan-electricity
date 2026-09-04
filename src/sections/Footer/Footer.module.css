@@ -1,10 +1,12 @@
 .footer {
-  padding: var(--space-6) var(--space-8) var(--space-8);
+  composes: container from global;
+  padding-block: var(--space-6) var(--space-8);
 }
 
 .panel {
   position: relative;
   overflow: hidden;
+  overflow-x: clip;
   border-radius: var(--radius-xl);
   background: var(--color-footer-bg);
   padding: calc(var(--space-8) * 1.1) var(--space-8) var(--space-5);
@@ -206,7 +208,7 @@
 
 @media (max-width: 640px) {
   .footer {
-    padding: var(--space-5) var(--space-5) var(--space-6);
+    padding-block: var(--space-5) var(--space-6);
   }
 
   .panel {

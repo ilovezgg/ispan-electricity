@@ -13,17 +13,9 @@
   overflow: visible;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 640px) {
   .svg {
-    transform: scale(1.35) rotate(6deg) translateY(-14%);
-    transform-origin: 60% 40%;
-  }
-}
-
-@media (max-width: 560px) {
-  .svg {
-    transform: scale(1.7) rotate(14deg) translateY(-20%);
-    transform-origin: 65% 35%;
+    overflow: hidden;
   }
 }
 

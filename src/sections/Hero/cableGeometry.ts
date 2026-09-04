@@ -3,6 +3,13 @@ export const VIEWBOX_HEIGHT = 900;
 
 export const STRAND_COUNT = 27;
 
+/** Portrait viewBox for <640px: redrawn geometry, not a scaled-down desktop one. */
+export const MOBILE_VIEWBOX_WIDTH = 700;
+export const MOBILE_VIEWBOX_HEIGHT = 900;
+
+/** Fewer strands on mobile, mainly for animation performance. */
+export const MOBILE_STRAND_COUNT = 13;
+
 export type StrandTone = "core" | "copper";
 export type StrandLayer = "back" | "mid" | "front";
 
@@ -53,6 +60,21 @@ const SPINE_ANCHORS: readonly Anchor[] = [
   { x: 900, y: 585, spread: 0.11 },
   { x: 1260, y: 548, spread: 0.15 },
   { x: 1720, y: 575, spread: 0.18 },
+];
+
+/**
+ * Portrait counterpart of SPINE_ANCHORS for the <640px geometry variant:
+ * the bundle falls top-to-bottom through the frame instead of running
+ * landscape, so it reads correctly in a vertical composition rather than
+ * looking like a squashed/rotated version of the desktop artwork.
+ */
+const MOBILE_SPINE_ANCHORS: readonly Anchor[] = [
+  { x: 360, y: 40, spread: 1 },
+  { x: 330, y: 220, spread: 0.5 },
+  { x: 400, y: 430, spread: 0.14 },
+  { x: 310, y: 630, spread: 0.11 },
+  { x: 360, y: 820, spread: 0.15 },
+  { x: 330, y: 980, spread: 0.18 },
 ];
 
 /** Anchor indices at which woven strands are cut into separately-stackable segments. */
@@ -106,13 +128,18 @@ function smoothPath(points: readonly (readonly [number, number])[]): string {
  * settle into the tight bundle at a per-strand rate, so strands separate
  * from the bundle at different lengths instead of fanning out uniformly.
  */
-function strandPoints(offsetIndex: number, strandSeed: number, tone: StrandTone): (readonly [number, number])[] {
+function strandPoints(
+  offsetIndex: number,
+  strandSeed: number,
+  tone: StrandTone,
+  anchors: readonly Anchor[],
+): (readonly [number, number])[] {
   const isLongTail = tone === "copper" && noise(strandSeed * 19.7) > 0.72;
   const settle = 0.2 + noise(strandSeed * 21.3) * 0.85;
   const curveBoost = tone === "copper" ? 1.35 : 1;
   const tailReach = isLongTail ? 1.7 : 1;
 
-  return SPINE_ANCHORS.map((anchor, anchorIndex) => {
+  return anchors.map((anchor, anchorIndex) => {
     const spreadMul = anchorIndex === 1 ? settle : 1;
     const jitter =
       (noise(strandSeed * 3.1 + anchorIndex * 7.7) - 0.5) * 8 * anchor.spread * curveBoost;
@@ -178,7 +205,10 @@ function pickByRatio(count: number, ratio: number, seedFn: (i: number) => number
   return new Set(ranked.slice(0, Math.round(count * ratio)));
 }
 
-export function generateStrands(count: number = STRAND_COUNT): Strand[] {
+export function generateStrands(
+  count: number = STRAND_COUNT,
+  anchors: readonly Anchor[] = SPINE_ANCHORS,
+): Strand[] {
   const mid = (count - 1) / 2;
   const weavers = pickByRatio(count, WEAVE_RATIO, (i) => noise(i * 17.3 + 2.9));
 
@@ -187,7 +217,7 @@ export function generateStrands(count: number = STRAND_COUNT): Strand[] {
     const reach = Math.abs(offsetIndex) / mid;
     const tone: StrandTone = i % COPPER_STRIDE === 0 ? "copper" : "core";
 
-    const points = strandPoints(offsetIndex, i, tone);
+    const points = strandPoints(offsetIndex, i, tone, anchors);
     const fullPath = smoothPath(points);
     const weave = weavers.has(i);
     const { segments, isWoven } = segmentsFor(points, weave, i);
@@ -219,7 +249,12 @@ export function generateStrands(count: number = STRAND_COUNT): Strand[] {
 }
 
 /** A soft, blurred shadow path tracing the bundle's spine, for grounding it. */
-export function generateShadowPath(): string {
-  const points = SPINE_ANCHORS.map((anchor) => [anchor.x, anchor.y + 34] as const);
+export function generateShadowPath(anchors: readonly Anchor[] = SPINE_ANCHORS): string {
+  const points = anchors.map((anchor) => [anchor.x, anchor.y + 34] as const);
   return smoothPath(points);
+}
+
+/** Portrait spine used by the <640px geometry variant. */
+export function getMobileSpineAnchors(): readonly Anchor[] {
+  return MOBILE_SPINE_ANCHORS;
 }

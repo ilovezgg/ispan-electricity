@@ -20,7 +20,7 @@
 }
 
 .value {
-  font-size: 1.9rem;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.02em;
@@ -47,9 +47,14 @@
   font-size: 1rem;
 }
 
+@media (max-width: 900px) {
+  .card {
+    flex: 1 1 0;
+  }
+}
+
 @media (max-width: 640px) {
   .card {
     min-width: 0;
-    flex: 1 1 0;
   }
 }

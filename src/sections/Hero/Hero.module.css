@@ -1,7 +1,8 @@
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 100dvh;
   overflow: hidden;
+  overflow-x: clip;
   background: var(--color-surface);
   isolation: isolate;
 }
@@ -12,15 +13,16 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100svh;
+  min-height: 100dvh;
 }
 
 .bottom {
+  composes: container from global;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--space-6);
-  padding: 0 var(--space-8) var(--space-8);
+  padding-bottom: var(--space-8);
 }
 
 .stats {
@@ -30,21 +32,15 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   .bottom {
     flex-direction: column;
     align-items: stretch;
     gap: var(--space-5);
-    padding: 0 var(--space-5) var(--space-6);
+    padding-bottom: var(--space-6);
   }
 
   .stats {
     flex-direction: row;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero {
-    min-height: 100dvh;
   }
 }
