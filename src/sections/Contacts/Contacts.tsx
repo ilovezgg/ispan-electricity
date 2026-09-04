@@ -2,24 +2,12 @@ import { useState, type FormEvent } from "react";
 import { useTranslation } from "../../i18n/useTranslation";
 import { useReducedMotion } from "../../hooks/useReducedMotion";
 import { CONTACT_INFO, WHATSAPP_LINK } from "../../config/contacts";
+import { submitLead } from "../../lib/leads";
 import { ContactIcon, WhatsAppIcon } from "./icons";
 import { formatSpanishPhone, isNameValid, isSpanishPhoneValid } from "./phoneMask";
 import styles from "./Contacts.module.css";
 
 type Status = "idle" | "sending" | "done";
-
-/** Snapshot handed to onSubmit — a stub, since there is no lead endpoint yet. */
-interface ContactSubmission {
-  readonly name: string;
-  readonly phone: string;
-  readonly task: string;
-}
-
-function handleContactSubmit(submission: ContactSubmission): void {
-  // No backend wired up yet — this project has no API route, so submission
-  // is just logged until a lead endpoint exists.
-  console.info("[contacts] submission", submission);
-}
 
 function scrollToQuiz(): void {
   document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -50,8 +38,11 @@ export function Contacts() {
     if (!nameValid || !phoneValid || status === "sending") return;
 
     setStatus("sending");
-    handleContactSubmit({ name, phone, task });
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    try {
+      await submitLead({ name, phone, message: task, source: "contact" });
+    } catch (err) {
+      console.error("[contacts] submission failed", err);
+    }
     setStatus("done");
   }
 

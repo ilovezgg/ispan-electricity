@@ -15,6 +15,7 @@ export function About() {
             </div>
 
             <div className={styles.founderCard}>
+              <span className={styles.founderName}>{founder.name}</span>
               <span className={styles.founderBadge}>{founder.badgeName}</span>
               <span className={styles.founderRole}>{founder.role}</span>
               <span className={styles.founderLocation}>{founder.location}</span>

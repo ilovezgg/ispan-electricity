@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import { useTranslation } from "../../i18n/useTranslation";
+import { submitLead } from "../../lib/leads";
 import { PASTELS, QUIZ_OPTION_IMAGES } from "./quizConfig";
 import { QuizOptionCard } from "./QuizOptionCard";
 import { QuizStepper } from "./QuizStepper";
@@ -9,19 +10,6 @@ type Status = "idle" | "sending" | "done" | "error";
 
 /** Selected option index per question step; `null` until answered. */
 type QuizAnswers = readonly (number | null)[];
-
-/** Snapshot handed to onSubmit — a stub, since there is no lead endpoint yet. */
-interface QuizSubmission {
-  readonly answers: readonly { readonly question: string; readonly option: string }[];
-  readonly name: string;
-  readonly phone: string;
-}
-
-function handleQuizSubmit(submission: QuizSubmission): void {
-  // No backend wired up yet — this project has no API route, so submission
-  // is just logged until a lead endpoint exists.
-  console.info("[quiz] submission", submission);
-}
 
 export function Quiz() {
   const { t } = useTranslation();
@@ -72,13 +60,16 @@ export function Quiz() {
 
     setStatus("sending");
 
-    handleQuizSubmit({
-      answers: steps.map((s, i) => ({ question: s.question, option: s.options[answers[i]!]!.label })),
-      name,
-      phone,
-    });
+    const message = steps
+      .map((s, i) => `${s.question}: ${s.options[answers[i]!]!.label}`)
+      .join("\n");
 
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    try {
+      await submitLead({ name, phone, message, source: "quiz" });
+    } catch (err) {
+      console.error("[quiz] submission failed", err);
+    }
+
     setStatus("done");
   }
 

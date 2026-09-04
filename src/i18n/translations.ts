@@ -115,6 +115,7 @@ export const translations: Translations = {
       intro:
         "Empecé como ayudante de electricista. Hace 12 años entendí algo simple: la gente no necesita un «electricista de una hora», sino alguien que responda por el resultado durante años. Me trasladé a España en 2018, obtuve la licencia local y aprendí la normativa REBT. Desde entonces trabajo solo, sin cuadrillas.",
       founder: {
+        name: "Boris Bykov",
         initials: "BB",
         badgeName: "BB · SMART VOLT",
         role: "Electricista autónomo",
@@ -294,6 +295,7 @@ export const translations: Translations = {
       intro:
         "I started as an electrician's assistant. 12 years ago I realized something simple: people don't need an \"electrician for an hour\" — they need someone who stands behind the result for years. I moved to Spain in 2018, got my local license, and learned the REBT code. Since then — solo, no crews.",
       founder: {
+        name: "Boris Bykov",
         initials: "BB",
         badgeName: "BB · SMART VOLT",
         role: "Independent electrician",
@@ -473,6 +475,7 @@ export const translations: Translations = {
       intro:
         "Я начинал как помощник монтёра. 12 лет назад понял простую вещь: людям нужен не «электрик на час», а человек, который отвечает за результат годами. Переехал в Испанию в 2018, получил местную лицензию, выучил нормы REBT. С тех пор — один, без бригад.",
       founder: {
+        name: "Борис Быков",
         initials: "ББ",
         badgeName: "ББ · СМАРТ ВОЛЬТ",
         role: "Частный электрик",

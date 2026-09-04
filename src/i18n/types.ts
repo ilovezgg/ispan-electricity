@@ -58,6 +58,7 @@ export interface Translation {
     readonly headingAccent: string;
     readonly intro: string;
     readonly founder: {
+      readonly name: string;
       readonly initials: string;
       readonly badgeName: string;
       readonly role: string;
