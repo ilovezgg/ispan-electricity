@@ -17,12 +17,11 @@
 }
 
 .bottom {
-  composes: container from global;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: var(--space-6);
-  padding-bottom: var(--space-8);
+  padding: 0 var(--gutter) var(--space-8);
 }
 
 .stats {
@@ -37,7 +36,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: var(--space-5);
-    padding-bottom: var(--space-6);
+    padding: 0 var(--gutter) var(--space-6);
   }
 
   .stats {
