@@ -1,24 +1,7 @@
-import { useMemo } from "react";
-import { generateShadowPath, VIEWBOX_HEIGHT, VIEWBOX_WIDTH } from "../Hero/cableGeometry";
+import { CircuitPattern } from "../../components/CircuitPattern/CircuitPattern";
 import styles from "./FeaturesBackground.module.css";
 
-/**
- * The same fallen-log spine curve as the hero cable bundle, reduced to a
- * single faint silhouette — no strands, no motion. Just a mass of weight
- * sitting low behind the cards.
- */
+/** Muted, static reuse of the hero's circuit pattern — no pulses, just faint board texture. */
 export function FeaturesBackground() {
-  const path = useMemo(() => generateShadowPath(), []);
-
-  return (
-    <svg
-      className={styles.wave}
-      viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
-      preserveAspectRatio="xMidYMax slice"
-      focusable="false"
-      aria-hidden="true"
-    >
-      <path d={path} fill="none" stroke="#6b5c4a" strokeOpacity="0.06" strokeWidth={220} strokeLinecap="round" />
-    </svg>
-  );
+  return <CircuitPattern className={styles.wave!} seed={2} density={0.45} intensity={0.05} animated={false} />;
 }

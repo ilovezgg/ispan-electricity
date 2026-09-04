@@ -1,18 +1,17 @@
-import { QuizIcon, type IconKey } from "./icons";
 import type { PastelKey } from "./quizConfig";
 import styles from "./QuizOptionCard.module.css";
 
 interface QuizOptionCardProps {
   readonly label: string;
   readonly tag: string;
-  readonly icon: IconKey;
+  readonly image: string;
   readonly pastel: PastelKey;
   readonly selected: boolean;
   readonly pickLabel: string;
   readonly onSelect: () => void;
 }
 
-export function QuizOptionCard({ label, tag, icon, pastel, selected, pickLabel, onSelect }: QuizOptionCardProps) {
+export function QuizOptionCard({ label, tag, image, pastel, selected, pickLabel, onSelect }: QuizOptionCardProps) {
   return (
     <button
       type="button"
@@ -21,10 +20,8 @@ export function QuizOptionCard({ label, tag, icon, pastel, selected, pickLabel, 
       onClick={onSelect}
     >
       <span className={`${styles.plate} ${styles[pastel]}`}>
+        <img className={styles.photo} src={image} alt="" loading="lazy" />
         <span className={styles.tag}>{tag}</span>
-        <span className={styles.iconWrap}>
-          <QuizIcon name={icon} />
-        </span>
         {selected ? (
           <span className={styles.check} aria-hidden="true">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

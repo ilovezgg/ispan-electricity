@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState, type FormEvent } from "react";
 import { useTranslation } from "../../i18n/useTranslation";
-import { PASTELS, QUIZ_OPTION_ICONS } from "./quizConfig";
+import { PASTELS, QUIZ_OPTION_IMAGES } from "./quizConfig";
 import { QuizOptionCard } from "./QuizOptionCard";
 import { QuizStepper } from "./QuizStepper";
 import styles from "./Quiz.module.css";
@@ -161,7 +161,7 @@ export function Quiz() {
                       key={option.label}
                       label={option.label}
                       tag={option.tag}
-                      icon={QUIZ_OPTION_ICONS[step]![i]!}
+                      image={QUIZ_OPTION_IMAGES[step]![i]!}
                       pastel={PASTELS[i]!}
                       selected={currentAnswer === i}
                       pickLabel={pick}
