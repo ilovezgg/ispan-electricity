@@ -5,14 +5,11 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import {
   COPPER_FADE_GRADIENT_ID,
   MOBILE_STRAND_COUNT,
-  MOBILE_VIEWBOX_HEIGHT,
-  MOBILE_VIEWBOX_WIDTH,
   STRAND_SHEEN_GRADIENT_ID,
   VIEWBOX_HEIGHT,
   VIEWBOX_WIDTH,
   generateShadowPath,
   generateStrands,
-  getMobileSpineAnchors,
   type Strand,
   type StrandLayer,
 } from "./cableGeometry";
@@ -35,17 +32,11 @@ export function CableBundle() {
   const isMobile = useMediaQuery(MOBILE_QUERY);
   const parallaxRef = usePointerParallax<HTMLDivElement>(!reducedMotion);
 
-  const viewBoxWidth = isMobile ? MOBILE_VIEWBOX_WIDTH : VIEWBOX_WIDTH;
-  const viewBoxHeight = isMobile ? MOBILE_VIEWBOX_HEIGHT : VIEWBOX_HEIGHT;
-
   const strands = useMemo(
-    () => (isMobile ? generateStrands(MOBILE_STRAND_COUNT, getMobileSpineAnchors()) : generateStrands()),
+    () => generateStrands(isMobile ? MOBILE_STRAND_COUNT : undefined),
     [isMobile],
   );
-  const shadowPath = useMemo(
-    () => (isMobile ? generateShadowPath(getMobileSpineAnchors()) : generateShadowPath()),
-    [isMobile],
-  );
+  const shadowPath = useMemo(() => generateShadowPath(), []);
 
   const layers: Record<StrandLayer, ReactNode[]> = { back: [], mid: [], front: [] };
 
@@ -105,7 +96,7 @@ export function CableBundle() {
     <div ref={parallaxRef} className={styles.wrapper} aria-hidden="true">
       <svg
         className={styles.svg}
-        viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
+        viewBox={`0 0 ${VIEWBOX_WIDTH} ${VIEWBOX_HEIGHT}`}
         preserveAspectRatio={isMobile ? "xMidYMid slice" : "xMidYMid meet"}
         focusable="false"
       >

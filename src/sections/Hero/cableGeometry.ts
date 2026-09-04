@@ -3,12 +3,8 @@ export const VIEWBOX_HEIGHT = 900;
 
 export const STRAND_COUNT = 27;
 
-/** Portrait viewBox for <640px: redrawn geometry, not a scaled-down desktop one. */
-export const MOBILE_VIEWBOX_WIDTH = 700;
-export const MOBILE_VIEWBOX_HEIGHT = 900;
-
 /** Fewer strands on mobile, mainly for animation performance. */
-export const MOBILE_STRAND_COUNT = 13;
+export const MOBILE_STRAND_COUNT = 15;
 
 export type StrandTone = "core" | "copper";
 export type StrandLayer = "back" | "mid" | "front";
@@ -60,21 +56,6 @@ const SPINE_ANCHORS: readonly Anchor[] = [
   { x: 900, y: 585, spread: 0.11 },
   { x: 1260, y: 548, spread: 0.15 },
   { x: 1720, y: 575, spread: 0.18 },
-];
-
-/**
- * Portrait counterpart of SPINE_ANCHORS for the <640px geometry variant:
- * the bundle falls top-to-bottom through the frame instead of running
- * landscape, so it reads correctly in a vertical composition rather than
- * looking like a squashed/rotated version of the desktop artwork.
- */
-const MOBILE_SPINE_ANCHORS: readonly Anchor[] = [
-  { x: 360, y: 40, spread: 1 },
-  { x: 330, y: 220, spread: 0.5 },
-  { x: 400, y: 430, spread: 0.14 },
-  { x: 310, y: 630, spread: 0.11 },
-  { x: 360, y: 820, spread: 0.15 },
-  { x: 330, y: 980, spread: 0.18 },
 ];
 
 /** Anchor indices at which woven strands are cut into separately-stackable segments. */
@@ -252,9 +233,4 @@ export function generateStrands(
 export function generateShadowPath(anchors: readonly Anchor[] = SPINE_ANCHORS): string {
   const points = anchors.map((anchor) => [anchor.x, anchor.y + 34] as const);
   return smoothPath(points);
-}
-
-/** Portrait spine used by the <640px geometry variant. */
-export function getMobileSpineAnchors(): readonly Anchor[] {
-  return MOBILE_SPINE_ANCHORS;
 }
