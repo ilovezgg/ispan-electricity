@@ -1,14 +1,15 @@
-import { WaveInterference } from "../../components/WaveInterference/WaveInterference";
+import { Oscilloscope } from "../../components/Oscilloscope/Oscilloscope";
 import styles from "./FeaturesBackground.module.css";
 
-/** Muted, static reuse of the hero's wave-interference pattern — no motion, just faint texture. */
+/** Muted, static reuse of the hero's oscilloscope signal — no motion, just faint texture. */
 export function FeaturesBackground() {
   return (
-    <WaveInterference
+    <Oscilloscope
       className={styles.wave!}
       seed={2}
-      sourceCount={2}
-      intensity={0.55}
+      lineCount={1}
+      amplitude={0.6}
+      showGrid={false}
       animated={false}
       interactive={false}
     />

@@ -21,7 +21,7 @@ export function Header() {
 
       <div className={styles.actions}>
         <LangSwitcher />
-        <a className={styles.cta} href="#contacto">
+        <a className={styles.cta} href="#contacto" data-oscilloscope-target="cta">
           {t.header.cta}
         </a>
       </div>
