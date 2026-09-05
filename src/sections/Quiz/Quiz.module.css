@@ -216,6 +216,10 @@
   color: var(--color-ink);
 }
 
+.thanks .submit {
+  margin-top: var(--space-5);
+}
+
 .thanksSubtitle {
   margin: 0 auto;
   max-width: 44ch;

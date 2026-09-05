@@ -74,6 +74,15 @@ export function Quiz() {
     setStatus("done");
   }
 
+  function reset() {
+    setStep(0);
+    setAnswers(steps.map(() => null));
+    setName("");
+    setPhone("");
+    setStatus("idle");
+    setError("");
+  }
+
   if (status === "done") {
     return (
       <section className={styles.quiz} id="contacto" aria-label={thanks.heading}>
@@ -85,6 +94,9 @@ export function Quiz() {
             </span>
             <h2 className={styles.thanksHeading}>{thanks.heading}</h2>
             <p className={styles.thanksSubtitle}>{thanks.subtitle}</p>
+            <button type="button" className={styles.submit} onClick={reset}>
+              {thanks.sendAnother}
+            </button>
           </div>
         </div>
       </section>

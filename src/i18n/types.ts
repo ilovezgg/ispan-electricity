@@ -47,6 +47,7 @@ export interface Translation {
       readonly badge: string;
       readonly heading: string;
       readonly subtitle: string;
+      readonly sendAnother: string;
     };
     readonly back: string;
     readonly next: string;
@@ -103,6 +104,7 @@ export interface Translation {
       readonly heading: string;
       readonly subtitle: string;
       readonly whatsappCta: string;
+      readonly sendAnother: string;
     };
   };
   readonly footer: {

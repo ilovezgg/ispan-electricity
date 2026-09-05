@@ -103,6 +103,7 @@ export const translations: Translations = {
         heading: "Gracias, ya lo tenemos",
         subtitle:
           "Te llamamos en breve para concretar los detalles y darte un presupuesto orientativo.",
+        sendAnother: "Enviar otra solicitud",
       },
       back: "atrás",
       next: "siguiente",
@@ -165,6 +166,7 @@ export const translations: Translations = {
         heading: "Recibido, gracias",
         subtitle: "Te contacto en breve para concretar el presupuesto.",
         whatsappCta: "O escríbeme ya por WhatsApp",
+        sendAnother: "Enviar otra solicitud",
       },
     },
     footer: {
@@ -283,6 +285,7 @@ export const translations: Translations = {
         heading: "Thanks, we've got it",
         subtitle:
           "We'll call you shortly to nail down the details and give you a ballpark quote.",
+        sendAnother: "Send another request",
       },
       back: "back",
       next: "next",
@@ -345,6 +348,7 @@ export const translations: Translations = {
         heading: "Got it, thank you",
         subtitle: "I'll reach out shortly to work out the quote.",
         whatsappCta: "Or message me now on WhatsApp",
+        sendAnother: "Send another request",
       },
     },
     footer: {
@@ -463,6 +467,7 @@ export const translations: Translations = {
         heading: "Спасибо, заявка у нас",
         subtitle:
           "Перезвоним в ближайшее время, уточним детали и назовём стоимость.",
+        sendAnother: "Отправить ещё одну заявку",
       },
       back: "назад",
       next: "далее",
@@ -525,6 +530,7 @@ export const translations: Translations = {
         heading: "Заявка получена, спасибо",
         subtitle: "Свяжусь в ближайшее время, чтобы уточнить смету.",
         whatsappCta: "Или напишите сразу в WhatsApp",
+        sendAnother: "Отправить ещё одну заявку",
       },
     },
     footer: {

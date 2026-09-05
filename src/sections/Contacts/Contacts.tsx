@@ -46,6 +46,16 @@ export function Contacts() {
     setStatus("done");
   }
 
+  function reset() {
+    setName("");
+    setPhone("");
+    setTask("");
+    setNameTouched(false);
+    setPhoneTouched(false);
+    setSubmitAttempted(false);
+    setStatus("idle");
+  }
+
   const telHref = `tel:${CONTACT_INFO.phoneHref}`;
   const mailHref = `mailto:${CONTACT_INFO.email}`;
 
@@ -119,6 +129,9 @@ export function Contacts() {
                   <WhatsAppIcon />
                   {thanks.whatsappCta}
                 </a>
+                <button type="button" className={styles.submit} onClick={reset}>
+                  {thanks.sendAnother}
+                </button>
               </div>
             ) : (
               <>
