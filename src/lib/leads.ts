@@ -2,11 +2,17 @@ const ADMIN_API_URL = import.meta.env.VITE_ADMIN_API_URL as string | undefined;
 
 export type LeadSource = "quiz" | "contact";
 
+export interface QuizAnswer {
+  readonly question: string;
+  readonly answer: string;
+}
+
 export interface LeadPayload {
   readonly name: string;
   readonly phone: string;
   readonly email?: string;
   readonly message?: string;
+  readonly answers?: readonly QuizAnswer[];
   readonly source: LeadSource;
 }
 

@@ -60,12 +60,13 @@ export function Quiz() {
 
     setStatus("sending");
 
-    const message = steps
-      .map((s, i) => `${s.question}: ${s.options[answers[i]!]!.label}`)
-      .join("\n");
+    const quizAnswers = steps.map((s, i) => ({
+      question: s.question,
+      answer: s.options[answers[i]!]!.label,
+    }));
 
     try {
-      await submitLead({ name, phone, message, source: "quiz" });
+      await submitLead({ name, phone, answers: quizAnswers, source: "quiz" });
     } catch (err) {
       console.error("[quiz] submission failed", err);
     }
