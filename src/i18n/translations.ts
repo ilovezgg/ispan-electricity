@@ -5,7 +5,7 @@ export const translations: Translations = {
     meta: { htmlLang: "es" },
     header: {
       logo: "smart volt",
-      nav: ["servicios", "proyectos", "contacto"],
+      nav: ["servicios", "trabajos", "proyectos", "contacto"],
       cta: "pedir presupuesto",
     },
     hero: {
@@ -109,6 +109,20 @@ export const translations: Translations = {
       next: "siguiente",
       pick: "elegir",
     },
+    portfolio: {
+      eyebrow: "trabajos realizados",
+      heading: "Cuadros que",
+      headingAccent: "hablan solos.",
+      subtitle: "Cada circuito etiquetado, cada cable ordenado. Así entrego cada cuadro, sin excepciones.",
+      items: [
+        { image: "/images/portfolio/panel-1.jpg", title: "Cuadro domótico KNX", tag: "Control por zonas" },
+        { image: "/images/portfolio/panel-2.jpg", title: "Cuadro general", tag: "Protecciones y tierra" },
+        { image: "/images/portfolio/panel-3.jpg", title: "Distribución por estancias", tag: "Cocina y salón" },
+        { image: "/images/portfolio/panel-4.jpg", title: "Automatización integral", tag: "Luz y climatización" },
+        { image: "/images/portfolio/panel-5.jpg", title: "Cuadro de vivienda", tag: "30+ circuitos" },
+        { image: "/images/portfolio/panel-6.jpg", title: "Módulos de automatización", tag: "Salidas configurables" },
+      ],
+    },
     about: {
       eyebrow: "historia",
       heading: "Electricidad",
@@ -188,7 +202,7 @@ export const translations: Translations = {
     meta: { htmlLang: "en" },
     header: {
       logo: "smart volt",
-      nav: ["services", "projects", "contact"],
+      nav: ["services", "work", "projects", "contact"],
       cta: "get a quote",
     },
     hero: {
@@ -291,6 +305,20 @@ export const translations: Translations = {
       next: "next",
       pick: "select",
     },
+    portfolio: {
+      eyebrow: "completed work",
+      heading: "Panels that",
+      headingAccent: "speak for themselves.",
+      subtitle: "Every circuit labeled, every cable dressed. That's how every panel leaves my hands, no exceptions.",
+      items: [
+        { image: "/images/portfolio/panel-1.jpg", title: "KNX smart panel", tag: "Zone-based control" },
+        { image: "/images/portfolio/panel-2.jpg", title: "Main distribution board", tag: "Protection and earthing" },
+        { image: "/images/portfolio/panel-3.jpg", title: "Room-by-room wiring", tag: "Kitchen and living room" },
+        { image: "/images/portfolio/panel-4.jpg", title: "Full automation setup", tag: "Lighting and HVAC" },
+        { image: "/images/portfolio/panel-5.jpg", title: "Residential panel", tag: "30+ circuits" },
+        { image: "/images/portfolio/panel-6.jpg", title: "Automation modules", tag: "Configurable outputs" },
+      ],
+    },
     about: {
       eyebrow: "story",
       heading: "Electrical work",
@@ -370,7 +398,7 @@ export const translations: Translations = {
     meta: { htmlLang: "ru" },
     header: {
       logo: "смарт вольт",
-      nav: ["услуги", "проекты", "контакты"],
+      nav: ["услуги", "работы", "проекты", "контакты"],
       cta: "рассчитать смету",
     },
     hero: {
@@ -472,6 +500,20 @@ export const translations: Translations = {
       back: "назад",
       next: "далее",
       pick: "выбрать",
+    },
+    portfolio: {
+      eyebrow: "выполненные работы",
+      heading: "Щиты, которые",
+      headingAccent: "говорят сами за себя.",
+      subtitle: "Каждая линия подписана, каждый провод уложен. Именно так выглядит любой щит после меня — без исключений.",
+      items: [
+        { image: "/images/portfolio/panel-1.jpg", title: "Умный щит KNX", tag: "Управление по зонам" },
+        { image: "/images/portfolio/panel-2.jpg", title: "Главный распределительный щит", tag: "Защита и заземление" },
+        { image: "/images/portfolio/panel-3.jpg", title: "Разводка по комнатам", tag: "Кухня и гостиная" },
+        { image: "/images/portfolio/panel-4.jpg", title: "Полная автоматизация", tag: "Свет и климат" },
+        { image: "/images/portfolio/panel-5.jpg", title: "Щит квартиры", tag: "30+ линий" },
+        { image: "/images/portfolio/panel-6.jpg", title: "Модули автоматики", tag: "Настраиваемые выходы" },
+      ],
     },
     about: {
       eyebrow: "история",

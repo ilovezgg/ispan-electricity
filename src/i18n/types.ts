@@ -11,7 +11,7 @@ export interface Translation {
   };
   readonly header: {
     readonly logo: string;
-    readonly nav: readonly [string, string, string];
+    readonly nav: readonly [string, string, string, string];
     readonly cta: string;
   };
   readonly hero: {
@@ -52,6 +52,13 @@ export interface Translation {
     readonly back: string;
     readonly next: string;
     readonly pick: string;
+  };
+  readonly portfolio: {
+    readonly eyebrow: string;
+    readonly heading: string;
+    readonly headingAccent: string;
+    readonly subtitle: string;
+    readonly items: readonly [PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem];
   };
   readonly about: {
     readonly eyebrow: string;
@@ -168,6 +175,12 @@ export interface TimelineItem {
   readonly year: string;
   readonly title: string;
   readonly description: string;
+}
+
+export interface PortfolioItem {
+  readonly image: string;
+  readonly title: string;
+  readonly tag: string;
 }
 
 export type Translations = Record<Locale, Translation>;

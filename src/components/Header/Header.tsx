@@ -2,6 +2,8 @@ import { useTranslation } from "../../i18n/useTranslation";
 import { LangSwitcher } from "../LangSwitcher/LangSwitcher";
 import styles from "./Header.module.css";
 
+const NAV_TARGETS = ["servicios", "trabajos", "proyectos", "contacto"] as const;
+
 export function Header() {
   const { t } = useTranslation();
 
@@ -12,8 +14,8 @@ export function Header() {
       </a>
 
       <nav className={styles.nav} aria-label="Main">
-        {t.header.nav.map((item) => (
-          <a key={item} className={styles.navLink} href="#">
+        {t.header.nav.map((item, index) => (
+          <a key={item} className={styles.navLink} href={`#${NAV_TARGETS[index]}`}>
             {item}
           </a>
         ))}
