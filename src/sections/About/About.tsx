@@ -6,7 +6,7 @@ export function About() {
   const { eyebrow, heading, headingAccent, intro, founder, principle, timeline, cta, ctaNote } = t.about;
 
   return (
-    <section className={styles.about} aria-label={heading}>
+    <section className={styles.about} aria-label={heading} id="proyectos">
       <div className={styles.card}>
         <div className={styles.top}>
           <div className={styles.visual}>

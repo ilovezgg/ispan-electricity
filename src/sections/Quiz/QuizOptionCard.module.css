@@ -33,7 +33,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 140px;
+  height: 220px;
   color: var(--color-ink);
   overflow: hidden;
 }
@@ -69,44 +69,44 @@
 
 .tag {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 5px 10px;
+  top: 12px;
+  left: 12px;
+  padding: 6px 12px;
   border-radius: var(--radius-pill);
   background: #fff;
-  font-size: 0.62rem;
+  font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .check {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--color-ink);
   color: #fff;
 }
 
 .check svg {
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
 }
 
 .bottom {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 14px 14px 16px;
+  gap: 7px;
+  padding: 16px 16px 18px;
 }
 
 .label {
-  font-size: 0.88rem;
+  font-size: 0.96rem;
   font-weight: 700;
   line-height: 1.3;
   color: var(--color-ink);
@@ -116,7 +116,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   color: var(--color-ink-muted);
 }
 

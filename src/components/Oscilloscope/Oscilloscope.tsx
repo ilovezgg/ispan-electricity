@@ -114,7 +114,7 @@ export const Oscilloscope = forwardRef<OscilloscopeHandle, OscilloscopeProps>(fu
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas || size.width === 0 || size.height === 0) return;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1 : 2);
     canvas.width = Math.max(1, Math.round(size.width * dpr));
     canvas.height = Math.max(1, Math.round(size.height * dpr));
     const ctx2d = canvas.getContext("2d");

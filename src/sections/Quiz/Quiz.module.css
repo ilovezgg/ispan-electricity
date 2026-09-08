@@ -29,11 +29,6 @@
 
 /* ---------- animated card body ---------- */
 
-.cardOuter {
-  overflow: hidden;
-  transition: height 350ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 .cardInner {
   animation: cardFade 350ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -63,7 +58,7 @@
 
 .opts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 22vw, 300px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(190px, 25vw, 340px), 1fr));
   gap: var(--space-4);
 }
 
@@ -249,7 +244,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cardOuter,
   .cardInner,
   .thanks {
     animation: none;

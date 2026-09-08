@@ -58,6 +58,9 @@ export interface Translation {
     readonly heading: string;
     readonly headingAccent: string;
     readonly subtitle: string;
+    readonly prevSlide: string;
+    readonly nextSlide: string;
+    readonly goToSlide: string;
     readonly items: readonly [PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem];
   };
   readonly about: {

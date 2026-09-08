@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useTranslation } from "../../i18n/useTranslation";
 import { submitLead } from "../../lib/leads";
 import { PASTELS, QUIZ_OPTION_IMAGES } from "./quizConfig";
@@ -26,15 +26,6 @@ export function Quiz() {
 
   const isFinal = step === totalSteps;
   const currentAnswer = isFinal ? null : answers[step]!;
-
-  const contentRef = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number | "auto">("auto");
-
-  useLayoutEffect(() => {
-    if (contentRef.current) {
-      setHeight(contentRef.current.scrollHeight);
-    }
-  }, [step, status]);
 
   const goBack = () => setStep((s) => Math.max(0, s - 1));
   const goNext = () => setStep((s) => Math.min(s + 1, totalSteps));
@@ -111,8 +102,8 @@ export function Quiz() {
           <span className={styles.hint}>{hint}</span>
         </div>
 
-        <div className={styles.cardOuter} style={{ height: height === "auto" ? "auto" : `${height}px` }}>
-          <div ref={contentRef} key={step} className={styles.cardInner}>
+        <div>
+          <div key={step} className={styles.cardInner}>
             {isFinal ? (
               <>
                 <h3 className={styles.question}>{final.heading}</h3>

@@ -114,6 +114,9 @@ export const translations: Translations = {
       heading: "Cuadros que",
       headingAccent: "hablan solos.",
       subtitle: "Cada circuito etiquetado, cada cable ordenado. Así entrego cada cuadro, sin excepciones.",
+      prevSlide: "Anterior",
+      nextSlide: "Siguiente",
+      goToSlide: "Ir a la foto {n}",
       items: [
         { image: "/images/portfolio/panel-1.jpg", title: "Cuadro domótico KNX", tag: "Control por zonas" },
         { image: "/images/portfolio/panel-2.jpg", title: "Cuadro general", tag: "Protecciones y tierra" },
@@ -310,6 +313,9 @@ export const translations: Translations = {
       heading: "Panels that",
       headingAccent: "speak for themselves.",
       subtitle: "Every circuit labeled, every cable dressed. That's how every panel leaves my hands, no exceptions.",
+      prevSlide: "Previous",
+      nextSlide: "Next",
+      goToSlide: "Go to photo {n}",
       items: [
         { image: "/images/portfolio/panel-1.jpg", title: "KNX smart panel", tag: "Zone-based control" },
         { image: "/images/portfolio/panel-2.jpg", title: "Main distribution board", tag: "Protection and earthing" },
@@ -506,6 +512,9 @@ export const translations: Translations = {
       heading: "Щиты, которые",
       headingAccent: "говорят сами за себя.",
       subtitle: "Каждая линия подписана, каждый провод уложен. Именно так выглядит любой щит после меня — без исключений.",
+      prevSlide: "Предыдущее",
+      nextSlide: "Следующее",
+      goToSlide: "Перейти к фото {n}",
       items: [
         { image: "/images/portfolio/panel-1.jpg", title: "Умный щит KNX", tag: "Управление по зонам" },
         { image: "/images/portfolio/panel-2.jpg", title: "Главный распределительный щит", tag: "Защита и заземление" },
