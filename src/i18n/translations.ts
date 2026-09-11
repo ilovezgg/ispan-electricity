@@ -15,8 +15,8 @@ export const translations: Translations = {
       subtitle:
         "Instalaciones, domótica y mantenimiento eléctrico para viviendas y locales. Un solo técnico, de principio a fin, sin intermediarios.",
       stats: [
-        { value: "12", label: "años de oficio" },
-        { value: "600+", label: "instalaciones entregadas" },
+        { value: "6", label: "años de oficio" },
+        { value: "70", label: "instalaciones entregadas" },
       ],
     },
     features: {
@@ -33,9 +33,9 @@ export const translations: Translations = {
         title: "Un solo técnico",
         subtitle: "de la primera llamada al boletín final",
         stat1Label: "años de oficio",
-        stat1Value: "12",
+        stat1Value: "6",
         stat2Label: "instalaciones",
-        stat2Value: "600+",
+        stat2Value: "70",
         text: "Sin subcontratas ni intermediarios: quien coge el teléfono es quien abre el cuadro.",
       },
       cardRegions: {
@@ -124,6 +124,11 @@ export const translations: Translations = {
         { image: "/images/portfolio/panel-4.jpg", title: "Automatización integral", tag: "Luz y climatización" },
         { image: "/images/portfolio/panel-5.jpg", title: "Cuadro de vivienda", tag: "30+ circuitos" },
         { image: "/images/portfolio/panel-6.jpg", title: "Módulos de automatización", tag: "Salidas configurables" },
+        { image: "/images/portfolio/panel-7.jpg", title: "Cuadro multisección", tag: "Circuitos etiquetados" },
+        { image: "/images/portfolio/panel-8.jpg", title: "Control de zonas de climatización", tag: "Actuadores y cableado" },
+        { image: "/images/portfolio/panel-9.jpg", title: "Bomba de calor Samsung", tag: "Conexionado y control" },
+        { image: "/images/portfolio/panel-10.jpg", title: "Cuadro con automatización Hager", tag: "Circuitos individuales" },
+        { image: "/images/portfolio/panel-11.jpg", title: "Automatización de piscina y jardín", tag: "KNX Zennio" },
       ],
     },
     about: {
@@ -131,14 +136,14 @@ export const translations: Translations = {
       heading: "Electricidad",
       headingAccent: "que no falla.",
       intro:
-        "Empecé como ayudante de electricista. Hace 12 años entendí algo simple: la gente no necesita un «electricista de una hora», sino alguien que responda por el resultado durante años. Me trasladé a España en 2018, obtuve la licencia local y aprendí la normativa REBT. Desde entonces trabajo solo, sin cuadrillas.",
+        "Empecé como ayudante de electricista. Hace 6 años me trasladé a España, obtuve la licencia local y aprendí la normativa REBT — fue entonces cuando entendí algo simple: la gente no necesita un «electricista de una hora», sino alguien que responda por el resultado durante años. Desde entonces trabajo solo, sin cuadrillas.",
       founder: {
         name: "Boris Bykov",
         initials: "BB",
         badgeName: "BB · SMART VOLT",
         role: "Electricista autónomo",
         location: "Marbella y alrededores",
-        badges: ["Licencia ES", "12 años"],
+        badges: ["Licencia ES", "6 años"],
       },
       principle: {
         kicker: "principio",
@@ -147,8 +152,8 @@ export const translations: Translations = {
       },
       timeline: [
         { year: "2012", title: "Inicio en el oficio", description: "Primeros cuadros, primeras obras" },
-        { year: "2018", title: "Traslado a España", description: "Licencia, REBT, boletín" },
-        { year: "2026", title: "600+ proyectos", description: "Pisos, casas, locales" },
+        { year: "2020", title: "Traslado a España", description: "Licencia, REBT, boletín" },
+        { year: "2026", title: "70 proyectos", description: "Pisos, casas, locales" },
       ],
       cta: "Conóceme",
       ctaNote: "Respondo yo mismo, sin gestores",
@@ -215,8 +220,8 @@ export const translations: Translations = {
       subtitle:
         "Wiring, smart-home automation and electrical upkeep for homes and businesses. One technician, start to finish, no middlemen.",
       stats: [
-        { value: "12", label: "years in the trade" },
-        { value: "600+", label: "installations delivered" },
+        { value: "6", label: "years in the trade" },
+        { value: "70", label: "installations delivered" },
       ],
     },
     features: {
@@ -233,9 +238,9 @@ export const translations: Translations = {
         title: "One technician",
         subtitle: "from the first call to the final paperwork",
         stat1Label: "years in the trade",
-        stat1Value: "12",
+        stat1Value: "6",
         stat2Label: "installations",
-        stat2Value: "600+",
+        stat2Value: "70",
         text: "No subcontractors, no middlemen: whoever answers the phone is the one who opens the panel.",
       },
       cardRegions: {
@@ -323,6 +328,11 @@ export const translations: Translations = {
         { image: "/images/portfolio/panel-4.jpg", title: "Full automation setup", tag: "Lighting and HVAC" },
         { image: "/images/portfolio/panel-5.jpg", title: "Residential panel", tag: "30+ circuits" },
         { image: "/images/portfolio/panel-6.jpg", title: "Automation modules", tag: "Configurable outputs" },
+        { image: "/images/portfolio/panel-7.jpg", title: "Multi-section panel", tag: "Labeled circuits" },
+        { image: "/images/portfolio/panel-8.jpg", title: "HVAC zone control", tag: "Actuators and wiring" },
+        { image: "/images/portfolio/panel-9.jpg", title: "Samsung heat pump", tag: "Wiring and controls" },
+        { image: "/images/portfolio/panel-10.jpg", title: "Panel with Hager automation", tag: "Individual circuits" },
+        { image: "/images/portfolio/panel-11.jpg", title: "Pool and garden automation", tag: "KNX Zennio" },
       ],
     },
     about: {
@@ -330,14 +340,14 @@ export const translations: Translations = {
       heading: "Electrical work",
       headingAccent: "that doesn't let you down.",
       intro:
-        "I started as an electrician's assistant. 12 years ago I realized something simple: people don't need an \"electrician for an hour\" — they need someone who stands behind the result for years. I moved to Spain in 2018, got my local license, and learned the REBT code. Since then — solo, no crews.",
+        "I started as an electrician's assistant. 6 years ago I moved to Spain, got my local license, and learned the REBT code — that's when I realized something simple: people don't need an \"electrician for an hour\" — they need someone who stands behind the result for years. Since then — solo, no crews.",
       founder: {
         name: "Boris Bykov",
         initials: "BB",
         badgeName: "BB · SMART VOLT",
         role: "Independent electrician",
         location: "Marbella and surrounding areas",
-        badges: ["ES license", "12 years"],
+        badges: ["ES license", "6 years"],
       },
       principle: {
         kicker: "principle",
@@ -346,8 +356,8 @@ export const translations: Translations = {
       },
       timeline: [
         { year: "2012", title: "Started in the trade", description: "First panels, first jobs" },
-        { year: "2018", title: "Moved to Spain", description: "License, REBT, boletín" },
-        { year: "2026", title: "600+ projects", description: "Apartments, houses, commercial" },
+        { year: "2020", title: "Moved to Spain", description: "License, REBT, boletín" },
+        { year: "2026", title: "70 projects", description: "Apartments, houses, commercial" },
       ],
       cta: "Get in touch",
       ctaNote: "I answer personally, no account managers",
@@ -414,8 +424,8 @@ export const translations: Translations = {
       subtitle:
         "Монтаж проводки, умный дом и обслуживание электросетей в домах и офисах. Один мастер от начала до конца, без посредников.",
       stats: [
-        { value: "12", label: "лет в профессии" },
-        { value: "600+", label: "сданных объектов" },
+        { value: "6", label: "лет в профессии" },
+        { value: "70", label: "сданных объектов" },
       ],
     },
     features: {
@@ -432,9 +442,9 @@ export const translations: Translations = {
         title: "Один мастер",
         subtitle: "от первого звонка до итоговых документов",
         stat1Label: "лет в профессии",
-        stat1Value: "12",
+        stat1Value: "6",
         stat2Label: "объектов",
-        stat2Value: "600+",
+        stat2Value: "70",
         text: "Без субподрядчиков и посредников: кто берёт трубку, тот и открывает щит.",
       },
       cardRegions: {
@@ -522,6 +532,11 @@ export const translations: Translations = {
         { image: "/images/portfolio/panel-4.jpg", title: "Полная автоматизация", tag: "Свет и климат" },
         { image: "/images/portfolio/panel-5.jpg", title: "Щит квартиры", tag: "30+ линий" },
         { image: "/images/portfolio/panel-6.jpg", title: "Модули автоматики", tag: "Настраиваемые выходы" },
+        { image: "/images/portfolio/panel-7.jpg", title: "Многосекционный щит", tag: "Промаркированные линии" },
+        { image: "/images/portfolio/panel-8.jpg", title: "Управление зонами климата", tag: "Актуаторы и разводка" },
+        { image: "/images/portfolio/panel-9.jpg", title: "Тепловой насос Samsung", tag: "Подключение и управление" },
+        { image: "/images/portfolio/panel-10.jpg", title: "Щит с автоматикой Hager", tag: "Индивидуальные линии" },
+        { image: "/images/portfolio/panel-11.jpg", title: "Автоматика бассейна и сада", tag: "KNX Zennio" },
       ],
     },
     about: {
@@ -529,14 +544,14 @@ export const translations: Translations = {
       heading: "Электрика",
       headingAccent: "которая не подводит.",
       intro:
-        "Я начинал как помощник монтёра. 12 лет назад понял простую вещь: людям нужен не «электрик на час», а человек, который отвечает за результат годами. Переехал в Испанию в 2018, получил местную лицензию, выучил нормы REBT. С тех пор — один, без бригад.",
+        "Я начинал как помощник монтёра. 6 лет назад переехал в Испанию, получил местную лицензию, выучил нормы REBT — тогда и понял простую вещь: людям нужен не «электрик на час», а человек, который отвечает за результат годами. С тех пор — один, без бригад.",
       founder: {
         name: "Борис Быков",
         initials: "ББ",
         badgeName: "ББ · СМАРТ ВОЛЬТ",
         role: "Частный электрик",
         location: "Марбелья и окрестности",
-        badges: ["ES лицензия", "12 лет"],
+        badges: ["ES лицензия", "6 лет"],
       },
       principle: {
         kicker: "принцип",
@@ -545,8 +560,8 @@ export const translations: Translations = {
       },
       timeline: [
         { year: "2012", title: "Старт в профессии", description: "Первые щиты, первые объекты" },
-        { year: "2018", title: "Переезд в Испанию", description: "Лицензия, REBT, boletín" },
-        { year: "2026", title: "600+ объектов", description: "Квартиры, дома, коммерция" },
+        { year: "2020", title: "Переезд в Испанию", description: "Лицензия, REBT, boletín" },
+        { year: "2026", title: "70 объектов", description: "Квартиры, дома, коммерция" },
       ],
       cta: "Познакомиться",
       ctaNote: "Отвечаю лично, без менеджеров",
