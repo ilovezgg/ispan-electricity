@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useTranslation } from "../../i18n/useTranslation";
+import { WHATSAPP_LINK } from "../../config/contacts";
 import { submitLead } from "../../lib/leads";
 import { PASTELS, QUIZ_OPTION_IMAGES } from "./quizConfig";
 import { QuizOptionCard } from "./QuizOptionCard";
@@ -58,11 +59,12 @@ export function Quiz() {
 
     try {
       await submitLead({ name, phone, answers: quizAnswers, source: "quiz" });
+      setStatus("done");
     } catch (err) {
       console.error("[quiz] submission failed", err);
+      setStatus("error");
+      setError(final.errorSubmit);
     }
-
-    setStatus("done");
   }
 
   function reset() {
@@ -142,7 +144,16 @@ export function Quiz() {
                   </div>
 
                   <small className={status === "error" ? `${styles.small} ${styles.err}` : styles.small}>
-                    {status === "error" ? error : final.consent}
+                    {status === "error" ? (
+                      <>
+                        {error}{" "}
+                        <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                          WhatsApp
+                        </a>
+                      </>
+                    ) : (
+                      final.consent
+                    )}
                   </small>
                 </form>
               </>

@@ -8,10 +8,48 @@ const prefersReducedMotion = () =>
 
 export function Portfolio() {
   const { t } = useTranslation();
-  const { eyebrow, heading, headingAccent, subtitle, prevSlide, nextSlide, goToSlide, items } = t.portfolio;
+  const { eyebrow, heading, headingAccent, subtitle, prevSlide, nextSlide, goToSlide, closeVideo, playVideo, items } =
+    t.portfolio;
   const { ref, visible } = useScrollReveal<HTMLDivElement>();
   const trackRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
+  const [openVideo, setOpenVideo] = useState<string | null>(null);
+  const [openVideoTitle, setOpenVideoTitle] = useState<string>("");
+  const lastTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const lightboxRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!openVideo) return;
+    closeButtonRef.current?.focus();
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenVideo(null);
+        return;
+      }
+      if (event.key !== "Tab" || !lightboxRef.current) return;
+      const focusable = lightboxRef.current.querySelectorAll<HTMLElement>(
+        'button, video, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+      );
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      document.body.style.overflow = "";
+      lastTriggerRef.current?.focus();
+    };
+  }, [openVideo]);
 
   const scrollToIndex = (index: number) => {
     const track = trackRef.current;
@@ -56,7 +94,25 @@ export function Portfolio() {
           {items.map((item, index) => (
             <figure className={styles.card} key={item.image} style={{ transitionDelay: `${index * 70}ms` }}>
               <div className={styles.imageWrap}>
-                <img src={item.image} alt={item.title} loading="lazy" />
+                {item.video ? (
+                  <button
+                    type="button"
+                    className={styles.playButton}
+                    onClick={(event) => {
+                      lastTriggerRef.current = event.currentTarget;
+                      setOpenVideoTitle(item.title);
+                      setOpenVideo(item.video!);
+                    }}
+                    aria-label={playVideo.replace("{title}", item.title)}
+                  >
+                    <img src={item.image} alt="" loading="lazy" />
+                    <span className={styles.playIcon} aria-hidden="true">
+                      ▶
+                    </span>
+                  </button>
+                ) : (
+                  <img src={item.image} alt={item.title} loading="lazy" />
+                )}
               </div>
               <figcaption className={styles.caption}>
                 <span className={styles.tag}>{item.tag}</span>
@@ -100,6 +156,36 @@ export function Portfolio() {
           </button>
         </div>
       </div>
+
+      {openVideo && (
+        <div
+          className={styles.lightbox}
+          ref={lightboxRef}
+          onClick={() => setOpenVideo(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={openVideoTitle}
+        >
+          <button
+            type="button"
+            ref={closeButtonRef}
+            className={styles.lightboxClose}
+            onClick={() => setOpenVideo(null)}
+            aria-label={closeVideo}
+          >
+            ✕
+          </button>
+          <video
+            className={styles.lightboxVideo}
+            src={openVideo}
+            controls
+            autoPlay
+            muted
+            playsInline
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 }

@@ -13,6 +13,8 @@ export interface Translation {
     readonly logo: string;
     readonly nav: readonly [string, string, string, string];
     readonly cta: string;
+    readonly openMenu: string;
+    readonly closeMenu: string;
   };
   readonly hero: {
     readonly badge: string;
@@ -42,6 +44,7 @@ export interface Translation {
       readonly consent: string;
       readonly errorName: string;
       readonly errorPhone: string;
+      readonly errorSubmit: string;
     };
     readonly thanks: {
       readonly badge: string;
@@ -61,7 +64,9 @@ export interface Translation {
     readonly prevSlide: string;
     readonly nextSlide: string;
     readonly goToSlide: string;
-    readonly items: readonly [PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem, PortfolioItem];
+    readonly closeVideo: string;
+    readonly playVideo: string;
+    readonly items: readonly PortfolioItem[];
   };
   readonly about: {
     readonly eyebrow: string;
@@ -106,6 +111,7 @@ export interface Translation {
       readonly submitting: string;
       readonly errorName: string;
       readonly errorPhone: string;
+      readonly errorSubmit: string;
       readonly consentPrefix: string;
       readonly consentLinkText: string;
       readonly consentSuffix: string;
@@ -184,6 +190,7 @@ export interface PortfolioItem {
   readonly image: string;
   readonly title: string;
   readonly tag: string;
+  readonly video?: string;
 }
 
 export type Translations = Record<Locale, Translation>;

@@ -40,6 +40,9 @@
   --glass-blur: 16px;
   --glass-shadow: 0 8px 30px rgb(17 18 20 / 8%);
 
+  /* Dimmed backdrop behind modals/menus */
+  --color-overlay: rgb(17 18 20 / 40%);
+
   /* Spacing scale */
   --space-3: 0.75rem;
   --space-4: 1rem;

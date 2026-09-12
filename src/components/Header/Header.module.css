@@ -9,6 +9,8 @@
 }
 
 .logo {
+  position: relative;
+  z-index: 60;
   display: inline-flex;
   align-items: center;
   justify-self: start;
@@ -40,6 +42,8 @@
 }
 
 .actions {
+  position: relative;
+  z-index: 60;
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -65,6 +69,122 @@
   opacity: 0.9;
 }
 
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  cursor: pointer;
+}
+
+.menuToggle:focus-visible {
+  outline: 2px solid var(--color-copper);
+  outline-offset: 2px;
+}
+
+.burger,
+.burger::before,
+.burger::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-ink);
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.burger {
+  position: relative;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.burger::before {
+  top: 0;
+  transform: translateY(-6px);
+}
+
+.burger::after {
+  top: 0;
+  transform: translateY(6px);
+}
+
+.burgerOpen {
+  background: transparent;
+}
+
+.burgerOpen::before {
+  transform: translateY(0) rotate(45deg);
+}
+
+.burgerOpen::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--color-overlay);
+}
+
+.mobileMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--gutter);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-float);
+}
+
+.mobileNavLink {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-surface-alt);
+  color: var(--color-ink);
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-transform: lowercase;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink:focus-visible {
+  color: var(--color-copper);
+}
+
+.mobileCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-3);
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+  color: var(--color-surface);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mobileCta:focus-visible {
+  outline: 2px solid var(--color-copper);
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
   .header {
     grid-template-columns: 1fr auto;
@@ -76,6 +196,16 @@
   }
 
   .cta {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+}
+
+@media (min-width: 901px) {
+  .overlay {
     display: none;
   }
 }

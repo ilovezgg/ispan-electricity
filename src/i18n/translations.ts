@@ -7,6 +7,8 @@ export const translations: Translations = {
       logo: "smart volt",
       nav: ["servicios", "trabajos", "proyectos", "contacto"],
       cta: "pedir presupuesto",
+      openMenu: "Abrir menú",
+      closeMenu: "Cerrar menú",
     },
     hero: {
       badge: "electricista autónomo · colegiado",
@@ -97,6 +99,7 @@ export const translations: Translations = {
           "Al enviar, aceptas que te contactemos sobre tu solicitud.",
         errorName: "Escribe tu nombre",
         errorPhone: "Revisa el número de teléfono",
+        errorSubmit: "No se pudo enviar. Inténtalo de nuevo o escríbenos por WhatsApp.",
       },
       thanks: {
         badge: "solicitud recibida",
@@ -117,6 +120,8 @@ export const translations: Translations = {
       prevSlide: "Anterior",
       nextSlide: "Siguiente",
       goToSlide: "Ir a la foto {n}",
+      closeVideo: "Cerrar vídeo",
+      playVideo: "Reproducir vídeo: {title}",
       items: [
         { image: "/images/portfolio/panel-1.jpg", title: "Cuadro domótico KNX", tag: "Control por zonas" },
         { image: "/images/portfolio/panel-2.jpg", title: "Cuadro general", tag: "Protecciones y tierra" },
@@ -129,6 +134,7 @@ export const translations: Translations = {
         { image: "/images/portfolio/panel-9.jpg", title: "Bomba de calor Samsung", tag: "Conexionado y control" },
         { image: "/images/portfolio/panel-10.jpg", title: "Cuadro con automatización Hager", tag: "Circuitos individuales" },
         { image: "/images/portfolio/panel-11.jpg", title: "Automatización de piscina y jardín", tag: "KNX Zennio" },
+        { image: "/images/portfolio/video-1-poster.jpg", video: "/images/portfolio/video-1.mp4", title: "Colector de climatización en obra", tag: "Vídeo del trabajo" },
       ],
     },
     about: {
@@ -180,6 +186,7 @@ export const translations: Translations = {
         submitting: "Enviando…",
         errorName: "Escribe tu nombre (mínimo 2 letras)",
         errorPhone: "Formato: +34 seguido de 9 dígitos",
+        errorSubmit: "No se pudo enviar. Inténtalo de nuevo o escríbenos por WhatsApp.",
         consentPrefix: "Al enviar, aceptas el ",
         consentLinkText: "tratamiento de tus datos",
         consentSuffix: " para poder contactarte.",
@@ -212,6 +219,8 @@ export const translations: Translations = {
       logo: "smart volt",
       nav: ["services", "work", "projects", "contact"],
       cta: "get a quote",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
     },
     hero: {
       badge: "independent electrician · licensed",
@@ -301,6 +310,7 @@ export const translations: Translations = {
         consent: "By sending, you agree to be contacted about your request.",
         errorName: "Enter your name",
         errorPhone: "Check your phone number",
+        errorSubmit: "Couldn't send it. Try again or message us on WhatsApp.",
       },
       thanks: {
         badge: "request received",
@@ -321,6 +331,8 @@ export const translations: Translations = {
       prevSlide: "Previous",
       nextSlide: "Next",
       goToSlide: "Go to photo {n}",
+      closeVideo: "Close video",
+      playVideo: "Play video: {title}",
       items: [
         { image: "/images/portfolio/panel-1.jpg", title: "KNX smart panel", tag: "Zone-based control" },
         { image: "/images/portfolio/panel-2.jpg", title: "Main distribution board", tag: "Protection and earthing" },
@@ -333,6 +345,7 @@ export const translations: Translations = {
         { image: "/images/portfolio/panel-9.jpg", title: "Samsung heat pump", tag: "Wiring and controls" },
         { image: "/images/portfolio/panel-10.jpg", title: "Panel with Hager automation", tag: "Individual circuits" },
         { image: "/images/portfolio/panel-11.jpg", title: "Pool and garden automation", tag: "KNX Zennio" },
+        { image: "/images/portfolio/video-1-poster.jpg", video: "/images/portfolio/video-1.mp4", title: "HVAC manifold on site", tag: "Video of the work" },
       ],
     },
     about: {
@@ -384,6 +397,7 @@ export const translations: Translations = {
         submitting: "Sending…",
         errorName: "Enter your name (min 2 letters)",
         errorPhone: "Format: +34 followed by 9 digits",
+        errorSubmit: "Couldn't send it. Try again or message us on WhatsApp.",
         consentPrefix: "By sending, you accept the ",
         consentLinkText: "processing of your data",
         consentSuffix: " so we can contact you.",
@@ -416,6 +430,8 @@ export const translations: Translations = {
       logo: "смарт вольт",
       nav: ["услуги", "работы", "проекты", "контакты"],
       cta: "рассчитать смету",
+      openMenu: "Открыть меню",
+      closeMenu: "Закрыть меню",
     },
     hero: {
       badge: "частный электрик · с лицензией",
@@ -505,6 +521,7 @@ export const translations: Translations = {
         consent: "Отправляя заявку, вы соглашаетесь на обработку данных.",
         errorName: "Введите имя",
         errorPhone: "Проверьте номер телефона",
+        errorSubmit: "Не получилось отправить. Попробуйте ещё раз или напишите в WhatsApp.",
       },
       thanks: {
         badge: "заявка принята",
@@ -525,6 +542,8 @@ export const translations: Translations = {
       prevSlide: "Предыдущее",
       nextSlide: "Следующее",
       goToSlide: "Перейти к фото {n}",
+      closeVideo: "Закрыть видео",
+      playVideo: "Воспроизвести видео: {title}",
       items: [
         { image: "/images/portfolio/panel-1.jpg", title: "Умный щит KNX", tag: "Управление по зонам" },
         { image: "/images/portfolio/panel-2.jpg", title: "Главный распределительный щит", tag: "Защита и заземление" },
@@ -537,6 +556,7 @@ export const translations: Translations = {
         { image: "/images/portfolio/panel-9.jpg", title: "Тепловой насос Samsung", tag: "Подключение и управление" },
         { image: "/images/portfolio/panel-10.jpg", title: "Щит с автоматикой Hager", tag: "Индивидуальные линии" },
         { image: "/images/portfolio/panel-11.jpg", title: "Автоматика бассейна и сада", tag: "KNX Zennio" },
+        { image: "/images/portfolio/video-1-poster.jpg", video: "/images/portfolio/video-1.mp4", title: "Коллектор отопления на объекте", tag: "Видео с объекта" },
       ],
     },
     about: {
@@ -588,6 +608,7 @@ export const translations: Translations = {
         submitting: "Отправляем…",
         errorName: "Введите имя (минимум 2 буквы)",
         errorPhone: "Формат: +34 и 9 цифр",
+        errorSubmit: "Не получилось отправить. Попробуйте ещё раз или напишите в WhatsApp.",
         consentPrefix: "Отправляя форму, вы соглашаетесь с ",
         consentLinkText: "обработкой данных",
         consentSuffix: ", чтобы мы могли с вами связаться.",

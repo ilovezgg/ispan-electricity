@@ -7,7 +7,7 @@ import { ContactIcon, WhatsAppIcon } from "./icons";
 import { formatSpanishPhone, isNameValid, isSpanishPhoneValid } from "./phoneMask";
 import styles from "./Contacts.module.css";
 
-type Status = "idle" | "sending" | "done";
+type Status = "idle" | "sending" | "done" | "error";
 
 function scrollToQuiz(): void {
   document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -40,10 +40,11 @@ export function Contacts() {
     setStatus("sending");
     try {
       await submitLead({ name, phone, message: task, source: "contact" });
+      setStatus("done");
     } catch (err) {
       console.error("[contacts] submission failed", err);
+      setStatus("error");
     }
-    setStatus("done");
   }
 
   function reset() {
@@ -161,7 +162,10 @@ export function Contacts() {
                       value={name}
                       aria-invalid={showNameError}
                       aria-describedby={showNameError ? "contact-name-error" : undefined}
-                      onChange={(e) => setName(e.target.value)}
+                      onChange={(e) => {
+                        setName(e.target.value);
+                        if (status === "error") setStatus("idle");
+                      }}
                       onBlur={() => setNameTouched(true)}
                     />
                     {showNameError ? (
@@ -185,7 +189,10 @@ export function Contacts() {
                       value={phone}
                       aria-invalid={showPhoneError}
                       aria-describedby={showPhoneError ? "contact-phone-error" : undefined}
-                      onChange={(e) => setPhone(formatSpanishPhone(e.target.value))}
+                      onChange={(e) => {
+                        setPhone(formatSpanishPhone(e.target.value));
+                        if (status === "error") setStatus("idle");
+                      }}
                       onBlur={() => setPhoneTouched(true)}
                     />
                     {showPhoneError ? (
@@ -219,6 +226,16 @@ export function Contacts() {
                       form.submit
                     )}
                   </button>
+
+                  {status === "error" ? (
+                    <>
+                      <span className={styles.errorText}>{form.errorSubmit}</span>
+                      <a className={styles.doneWhatsapp} href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                        <WhatsAppIcon />
+                        {thanks.whatsappCta}
+                      </a>
+                    </>
+                  ) : null}
 
                   <p className={styles.consent}>
                     {form.consentPrefix}
